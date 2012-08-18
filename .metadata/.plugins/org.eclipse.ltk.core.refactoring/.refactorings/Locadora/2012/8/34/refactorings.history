@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Move 5 elements to &apos;Locadora/src/Documentos&apos;&#x0A;- Original project: &apos;Locadora&apos;&#x0A;- Destination element: &apos;Locadora/src/Documentos&apos;&#x0A;- Original elements:&#x0A;     RG.java&#x0A;     Documento.java&#x0A;     CNPJ.java&#x0A;     CarteiraTrabalho.java&#x0A;     CPF.java&#x0A;- Update references to refactored element" description="Move files" destination="/src&lt;Documentos" element1="RG.java" element2="Documento.java" element3="CNPJ.java" element4="CarteiraTrabalho.java" element5="CPF.java" files="5" flags="589830" folders="0" id="org.eclipse.jdt.ui.move" policy="org.eclipse.jdt.ui.moveResources" qualified="false" references="true" stamp="1345305777260" units="0" version="1.0"/>
+</session>
