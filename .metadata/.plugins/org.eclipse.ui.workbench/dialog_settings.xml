@@ -4,9 +4,11 @@
 		<item value="false" key="WizardFileSystemResourceImportPage1.STORE_OVERWRITE_EXISTING_RESOURCES_ID"/>
 		<item value="false" key="WizardFileSystemResourceImportPage1.STORE_CREATE_CONTAINER_STRUCTURE_ID"/>
 		<list key="WizardFileSystemResourceImportPage1.STORE_SOURCE_NAMES_ID">
+			<item value="/home/alexandre/edgar/locadora/Locadora/src/Teste"/>
+			<item value="/home/alexandre/edgar/locadora/Locadora/src/Locavel"/>
+			<item value="/home/alexandre/edgar/locadora/Locadora/src/Banco"/>
+			<item value="/home/alexandre/locador.bkp/Locadora/src"/>
 			<item value="/home/alexandre/Locadora/src/Documentos"/>
-			<item value="/home/alexandre/Locadora/src/RecursosHumanos"/>
-			<item value="/home/alexandre/Locadora/src/Locavel"/>
 		</list>
 	</section>
 	<section name="ImportExportAction">
