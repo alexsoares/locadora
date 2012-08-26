@@ -2,13 +2,16 @@ package Banco;
 
 import java.util.ArrayList;
 import Locavel.Midia;
+import RecursosHumanos.Cliente;
 
 public class Banco {
 	
 	ArrayList<Midia> midia;
+	ArrayList<Cliente> cliente;
 	
 	public Banco() {
 		this.midia = new ArrayList<Midia>();
+		this.cliente = new ArrayList<Cliente>();
 	}
 	
 	private int retornaIndice ( ArrayList<Tabulavel> lista, String valorChave ) {

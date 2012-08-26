@@ -1,4 +1,5 @@
 package RecursosHumanos;
+import java.util.Date;
 
 public abstract class Pessoa {
 
@@ -8,53 +9,31 @@ public abstract class Pessoa {
 	private int numero;
 	private String cidade;
 	private int telefone;
+	private String email;
+	private Date nascimento;
 
-	public Pessoa(String nome, String rua, String bairro, int numero, String cidade, int telefone){
-		this.nome = nome;
-		this.rua = rua;
-		this.bairro = bairro;
-		this.numero = numero;
-		this.cidade = cidade;
-		this.telefone = telefone;
-	}
-
-	public String getNome() {
-		return nome;
-	}
-	
-	public void setNome(String nome) {
+	public void setNome(String nome){
 		this.nome = nome;
 	}
-	public String getRua() {
-		return rua;
-	}
-	public void setRua(String rua) {
-		this.rua = rua;
-	}
-	public String getBairro() {
-		return bairro;
-	}
-	public void setBairro(String bairro) {
-		this.bairro = bairro;
-	}
-	public int getNumero() {
-		return numero;
-	}
-	public void setNumero(int numero) {
-		this.numero = numero;
-	}
-	public String getCidade() {
-		return cidade;
-	}
-	public void setCidade(String cidade) {
+	public void setCidade(String cidade){
 		this.cidade = cidade;
 	}
-	public int getTelefone() {
-		return telefone;
-	}
-	public void setTelefone(int telefone) {
+	public void setTelefone(int telefone){
 		this.telefone = telefone;
 	}
+	public void setEmail(String email){
+		this.email = email;
+	}
 	
+    public String qualseunome(){
+    	return this.nome;
+    }
 	
+	public Date getNascimento() {
+		return nascimento;
+	}
+	public void setNascimento(Date nascimento) {
+		this.nascimento = nascimento;
+	}
+
 }

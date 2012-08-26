@@ -3,12 +3,15 @@
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import Locavel.*;
+import RecursosHumanos.Cliente;
 
 public class Main {
 
 	public static void main(String[] args) throws ParseException {
 
 		SimpleDateFormat FormatDate = new SimpleDateFormat("dd/MM/yyyy");
+		
+		Cliente cliente1 = new Cliente("Alexandre Soares", "Campinas", 92631244, "alexandre@outlook.com", "22/12/1985");
 		
 		Genero aventura = new Genero("Aventura","Filmes que contem cenas de adrenalina, batalhas e conquistas.");
 		Filme oSenhorDosAneisI = new Filme("O Senhor dos Aneis I",04.50, 0,FormatDate.parse("01/05/2001"),12,"Obra baseada no livro do Tolkien - O Senhor dos Aneis I",aventura,0,0,false);
@@ -17,7 +20,8 @@ public class Main {
 		aventura.addFilme(oSenhorDosAneisI);
 		aventura.addFilme(oSenhorDosAneisII);
 		aventura.addFilme(oSenhorDosAneisIII);
-		System.out.println(aventura.listFilme());
+		//System.out.println(aventura.listFilme());
+		System.out.println(cliente1.qualseunome());
 
 	}
 	

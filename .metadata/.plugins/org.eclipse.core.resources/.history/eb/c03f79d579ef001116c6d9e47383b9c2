@@ -1,0 +1,11 @@
+package RecursosHumanos;
+
+public class Cliente extends Pessoa{
+
+	public Cliente(String nome, String rua, String bairro, int numero,
+			String cidade, int telefone) {
+		super(nome, rua, bairro, numero, cidade, telefone);
+		// TODO Auto-generated constructor stub
+	}
+
+}
