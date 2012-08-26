@@ -104,7 +104,7 @@ public class Banco {
 			
 			registro = midia.get(i);
 			
-			System.out.println( registro.getDescricao() );
+			System.out.println( "Mídia código " + registro.getCodigo() + " e descrição " + registro.getDescricao() + ".");
 		}
 		
 	}
