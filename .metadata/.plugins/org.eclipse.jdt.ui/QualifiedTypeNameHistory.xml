@@ -1,2 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<qualifiedTypeNameHistroy/>
+<qualifiedTypeNameHistroy>
+<fullyQualifiedTypeName name="RecursosHumanos.Cliente"/>
+<fullyQualifiedTypeName name="Banco.Tabulavel"/>
+<fullyQualifiedTypeName name="Banco.Banco"/>
+</qualifiedTypeNameHistroy>
