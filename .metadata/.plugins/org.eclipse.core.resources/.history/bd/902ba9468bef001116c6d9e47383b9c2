@@ -87,11 +87,6 @@ public class Banco {
 		insereNaLista( (ArrayList) this.midia, (Tabulavel) midia);
 	}
 	
-	public void Insere ( Cliente cliente ) throws RegistroJaExiste{
-		insereNaLista( (ArrayList) this.cliente, (Tabulavel) cliente);
-	}
-		
-	
 	public void Exclui ( Midia midia ) throws RegistroInexistente{
 		removeDaLista( (ArrayList) this.midia, (Tabulavel) midia);
 	}

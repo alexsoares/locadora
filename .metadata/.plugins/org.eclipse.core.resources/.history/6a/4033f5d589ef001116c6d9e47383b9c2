@@ -33,7 +33,7 @@ public abstract class Pessoa {
     	return this.nome;
     }
     
-    public String getCPF(){
+    public int getCPF(){
     	return this.cpf;
     }
 	

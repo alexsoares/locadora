@@ -24,7 +24,7 @@ public class Cliente extends Pessoa implements Tabulavel{
 
 
 	public boolean comparaCampo(String chave) {
-		if ( this.getCPF() == chave ) {
+		if ( this.getCPF == chave ) {
 			return true;
 		}
 		else {

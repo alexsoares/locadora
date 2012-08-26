@@ -5,7 +5,7 @@ public abstract class Pessoa {
 
 	private String nome;
 	private String rua;
-	private String cpf;
+	private int cpf;
 	private String bairro;
 	private int numero;
 	private String cidade;
@@ -22,7 +22,7 @@ public abstract class Pessoa {
 	public void setTelefone(int telefone){
 		this.telefone = telefone;
 	}
-	public void setCpf(String cpf){
+	public void setCpf(int cpf){
 		this.cpf = cpf;
 	}
 	public void setEmail(String email){
@@ -33,7 +33,7 @@ public abstract class Pessoa {
     	return this.nome;
     }
     
-    public String getCPF(){
+    public int getCPF(){
     	return this.cpf;
     }
 	

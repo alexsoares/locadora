@@ -32,12 +32,6 @@ public class Main {
 		} catch (RegistroJaExiste e) {
 			System.out.println("(3) Duplicidade.");
 		}
-		try {
-			banco.Insere(cliente2);
-		} catch (RegistroJaExiste e) {
-			System.out.println("(3) Duplicidade.");
-		}
-
 	}
 	
 }
