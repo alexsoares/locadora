@@ -96,15 +96,8 @@ public class Banco {
 		removeDaLista( (ArrayList) this.midia, (Tabulavel) midia);
 	}
 	
-	public void Exclui ( Cliente cliente ) throws RegistroInexistente{
-		removeDaLista( (ArrayList) this.cliente, (Tabulavel) cliente);
-	}
 	public void Altera ( Midia midia) throws RegistroInexistente{
 		alteraNaLista( (ArrayList) this.midia, (Tabulavel) midia);
-	}
-	
-	public void Altera ( Cliente clinte) throws RegistroInexistente{
-		alteraNaLista( (ArrayList) this.cliente, (Tabulavel) cliente);
 	}
 	
 	public Midia ConsultaMidia ( String chave ) throws RegistroInexistente{

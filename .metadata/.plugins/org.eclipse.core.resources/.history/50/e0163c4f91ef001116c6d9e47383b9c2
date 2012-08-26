@@ -103,10 +103,6 @@ public class Banco {
 		alteraNaLista( (ArrayList) this.midia, (Tabulavel) midia);
 	}
 	
-	public void Altera ( Cliente clinte) throws RegistroInexistente{
-		alteraNaLista( (ArrayList) this.cliente, (Tabulavel) cliente);
-	}
-	
 	public Midia ConsultaMidia ( String chave ) throws RegistroInexistente{
 		return (Midia) consultaDaLista( (ArrayList) this.midia, chave);
 	}
