@@ -2,7 +2,12 @@ package Banco;
 
 public interface Tabulavel {
 
-	public boolean comparaCampo(String chave);
+	public boolean comparaCampoChave(String chave);
+	
 	public String retornaValorChave();
+	
+	public void setIndice( int indice);
+	
+	public int getIndice();
 
 }

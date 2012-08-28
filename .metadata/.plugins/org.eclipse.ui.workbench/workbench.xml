@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<workbench progressCount="15" version="2.0">
+<workbench progressCount="30" version="2.0">
 <workbenchAdvisor/>
 <window height="744" maximized="true" width="1024" x="65" y="24">
 <fastViewData fastViewLocation="1024"/>
@@ -11,10 +11,10 @@
 <coolItem id="org.eclipse.ui.workbench.file" itemType="typeToolBarContribution" x="122" y="22"/>
 <coolItem id="additions" itemType="typeGroupMarker"/>
 <coolItem id="org.eclipse.debug.ui.launchActionSet" itemType="typeToolBarContribution" x="129" y="22"/>
-<coolItem id="org.eclipse.jdt.ui.CompilationUnitEditor" itemType="typePlaceholder" x="-1" y="-1"/>
+<coolItem id="org.eclipse.jdt.ui.CompilationUnitEditor" itemType="typeToolBarContribution" x="-1" y="-1"/>
 <coolItem id="org.eclipse.jdt.ui.JavaElementCreationActionSet" itemType="typeToolBarContribution" x="76" y="22"/>
-<coolItem id="org.eclipse.search.searchActionSet" itemType="typeToolBarContribution" x="76" y="22"/>
-<coolItem id="org.eclipse.ui.edit.text.actionSet.presentation" itemType="typeToolBarContribution" x="107" y="22"/>
+<coolItem id="org.eclipse.search.searchActionSet" itemType="typeToolBarContribution" x="99" y="22"/>
+<coolItem id="org.eclipse.ui.edit.text.actionSet.presentation" itemType="typeToolBarContribution" x="130" y="22"/>
 <coolItem id="org.eclipse.wst.xml.ui.perspective.NewFileToolBar" itemType="typeToolBarContribution" x="-1" y="-1"/>
 <coolItem id="org.eclipse.wst.xml.ui.design.DesignToolBar" itemType="typeToolBarContribution" x="-1" y="-1"/>
 <coolItem id="group.nav" itemType="typeGroupMarker"/>
@@ -28,14 +28,53 @@
 <editorArea activeWorkbook="DefaultEditorWorkbook">
 <info part="DefaultEditorWorkbook">
 <folder appearance="1" expanded="2">
-<presentation id="org.eclipse.ui.presentations.WorkbenchPresentationFactory"/>
+<presentation id="org.eclipse.ui.presentations.WorkbenchPresentationFactory">
+<part id="0"/>
+<part id="1"/>
+<part id="2"/>
+<part id="3"/>
+<part id="4"/>
+<part id="5"/>
+<part id="6"/>
+</presentation>
 </folder>
 </info>
 </editorArea>
+<editor id="org.eclipse.jdt.ui.CompilationUnitEditor" name="Cliente.java" partName="Cliente.java" path="C:/Users/Edgar/Documents/GitHub/locadora/Locadora/src/RecursosHumanos/Cliente.java" title="Cliente.java" tooltip="Locadora/src/RecursosHumanos/Cliente.java" workbook="DefaultEditorWorkbook">
+<input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/Locadora/src/RecursosHumanos/Cliente.java"/>
+<editorState selectionHorizontalPixel="0" selectionLength="0" selectionOffset="302" selectionTopPixel="1073"/>
+</editor>
+<editor id="org.eclipse.jdt.ui.CompilationUnitEditor" name="Filme.java" partName="Filme.java" path="C:/Users/Edgar/Documents/GitHub/locadora/Locadora/src/Locavel/Filme.java" title="Filme.java" tooltip="Locadora/src/Locavel/Filme.java" workbook="DefaultEditorWorkbook">
+<input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/Locadora/src/Locavel/Filme.java"/>
+<editorState selectionHorizontalPixel="0" selectionLength="4" selectionOffset="67" selectionTopPixel="0"/>
+</editor>
+<editor id="org.eclipse.jdt.ui.CompilationUnitEditor" name="Produto.java" partName="Produto.java" path="C:/Users/Edgar/Documents/GitHub/locadora/Locadora/src/Locavel/Produto.java" title="Produto.java" tooltip="Locadora/src/Locavel/Produto.java" workbook="DefaultEditorWorkbook">
+<input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/Locadora/src/Locavel/Produto.java"/>
+<editorState selectionHorizontalPixel="0" selectionLength="0" selectionOffset="0" selectionTopPixel="0"/>
+</editor>
+<editor activePart="true" focus="true" id="org.eclipse.jdt.ui.CompilationUnitEditor" name="Main.java" partName="Main.java" path="C:/Users/Edgar/Documents/GitHub/locadora/Locadora/src/Run/Main.java" title="Main.java" tooltip="Locadora/src/Run/Main.java" workbook="DefaultEditorWorkbook">
+<input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/Locadora/src/Run/Main.java"/>
+<editorState selectionHorizontalPixel="0" selectionLength="0" selectionOffset="1202" selectionTopPixel="196"/>
+</editor>
+<editor id="org.eclipse.jdt.ui.CompilationUnitEditor" name="FilmeCadastrar.java" partName="FilmeCadastrar.java" path="C:/Users/Edgar/Documents/GitHub/locadora/Locadora/src/Visual/FilmeCadastrar.java" title="FilmeCadastrar.java" tooltip="Locadora/src/Visual/FilmeCadastrar.java" workbook="DefaultEditorWorkbook">
+<input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/Locadora/src/Visual/FilmeCadastrar.java"/>
+<editorState selectionHorizontalPixel="0" selectionLength="0" selectionOffset="556" selectionTopPixel="945"/>
+</editor>
+<editor id="org.eclipse.jdt.ui.CompilationUnitEditor" name="ClienteCadastrar.java" partName="ClienteCadastrar.java" path="C:/Users/Edgar/Documents/GitHub/locadora/Locadora/src/Visual/ClienteCadastrar.java" title="ClienteCadastrar.java" tooltip="Locadora/src/Visual/ClienteCadastrar.java" workbook="DefaultEditorWorkbook">
+<input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/Locadora/src/Visual/ClienteCadastrar.java"/>
+<editorState selectionHorizontalPixel="0" selectionLength="0" selectionOffset="5721" selectionTopPixel="2738"/>
+</editor>
+<editor id="org.eclipse.jdt.ui.CompilationUnitEditor" name="Home.java" partName="Home.java" path="C:/Users/Edgar/Documents/GitHub/locadora/Locadora/src/Visual/Home.java" title="Home.java" tooltip="Locadora/src/Visual/Home.java" workbook="DefaultEditorWorkbook">
+<input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/Locadora/src/Visual/Home.java"/>
+<editorState selectionHorizontalPixel="0" selectionLength="0" selectionOffset="3335" selectionTopPixel="678"/>
+</editor>
 </editors>
 <views>
 <view id="org.eclipse.ui.navigator.ProjectExplorer" partName="Project Explorer">
 <viewState CommonNavigator.LINKING_ENABLED="0" org.eclipse.ui.navigator.resources.workingSets.showTopLevelWorkingSets="0"/>
+</view>
+<view id="org.eclipse.jdt.ui.TypeHierarchy" partName="Type Hierarchy">
+<viewState hidefields="false" hidelocaltypes="false" hidenonpublic="false" hidestatic="false" input="=Locadora/src&lt;Visual{ClienteCadastrar.java[ClienteCadastrar" link_editors="0" mv_vertical_scroll="0" orientation="3" qualified_names="0" ratio="350" selection="=Locadora/src&lt;Visual{ClienteCadastrar.java[ClienteCadastrar" showinherited="false" sortbydefiningtype="false" vertical_scroll="0" view="2" workingSetName=""/>
 </view>
 <view id="org.eclipse.ui.views.ProblemView" partName="Problems">
 <viewState PRIMARY_SORT_FIELD="org.eclipse.ui.ide.severityAndDescriptionField" categoryGroup="org.eclipse.ui.ide.severity" markerContentGenerator="org.eclipse.ui.ide.problemsGenerator" partName="Problems">
@@ -67,14 +106,17 @@
 <child filterId="org.eclipse.jdt.internal.ui.PackageExplorer.EmptyInnerPackageFilter" isEnabled="true"/>
 <child filterId="org.eclipse.jdt.ui.PackageExplorer.PackageDeclarationFilter" isEnabled="true"/>
 <child filterId="org.eclipse.jdt.internal.ui.PackageExplorer.EmptyPackageFilter" isEnabled="false"/>
+<child filterId="org.eclipse.jdt.ui.PackageExplorer_patternFilterId_RemoteSystemsConnections" isEnabled="true"/>
 <child filterId="org.eclipse.jdt.ui.PackageExplorer.ImportDeclarationFilter" isEnabled="true"/>
 <child filterId="org.eclipse.jdt.ui.PackageExplorer.FieldsFilter" isEnabled="false"/>
 <child filterId="org.eclipse.jdt.internal.ui.PackageExplorer.HideInnerClassFilesFilter" isEnabled="true"/>
 <child filterId="org.eclipse.jdt.ui.PackageExplorer.NonPublicFilter" isEnabled="false"/>
 <child filterId="org.eclipse.jdt.ui.PackageExplorer_patternFilterId_.*" isEnabled="true"/>
 <child filterId="org.eclipse.jdt.ui.PackageExplorer.EmptyLibraryContainerFilter" isEnabled="true"/>
+<child filterId="org.eclipse.jdt.ui.PackageExplorer_patternFilterId_RemoteSystemsTempFiles" isEnabled="true"/>
 <child filterId="org.eclipse.pde.ui.BinaryProjectFilter1" isEnabled="false"/>
 <child filterId="org.eclipse.jdt.ui.PackageExplorer.SyntheticMembersFilter" isEnabled="true"/>
+<child filterId="org.eclipse.mylyn.java.ui.MembersFilter" isEnabled="false"/>
 </xmlDefinedFilters>
 </customFilters>
 </viewState>
@@ -97,7 +139,7 @@
 </view>
 <view id="org.eclipse.jdt.ui.JavadocView" partName="Javadoc"/>
 </views>
-<perspectives activePart="org.eclipse.jdt.ui.PackageExplorer" activePerspective="org.eclipse.jdt.ui.JavaPerspective">
+<perspectives activePart="org.eclipse.jdt.ui.CompilationUnitEditor" activePerspective="org.eclipse.jdt.ui.JavaPerspective">
 <perspective editorAreaTrimState="2" editorAreaVisible="1" fixed="0" version="0.016">
 <descriptor class="org.eclipse.ui.internal.ide.application.ResourcePerspective" id="org.eclipse.ui.resourcePerspective" label="Resource"/>
 <alwaysOnActionSet id="org.eclipse.search.searchActionSet"/>
@@ -178,6 +220,10 @@
 <alwaysOnActionSet id="org.eclipse.debug.ui.breakpointActionSet"/>
 <alwaysOnActionSet id="org.eclipse.jdt.debug.ui.JDTDebugActionSet"/>
 <alwaysOnActionSet id="org.eclipse.jdt.junit.JUnitActionSet"/>
+<alwaysOnActionSet id="org.eclipse.mylyn.context.ui.actionSet"/>
+<alwaysOnActionSet id="org.eclipse.mylyn.doc.actionSet"/>
+<alwaysOnActionSet id="org.eclipse.mylyn.tasks.ui.navigation"/>
+<alwaysOnActionSet id="org.eclipse.rse.core.search.searchActionSet"/>
 <show_view_action id="org.eclipse.jdt.ui.PackageExplorer"/>
 <show_view_action id="org.eclipse.jdt.ui.TypeHierarchy"/>
 <show_view_action id="org.eclipse.jdt.ui.SourceView"/>
@@ -211,6 +257,7 @@
 <hide_toolbar_item_id id="org.eclipse.jdt.ui.actions.OpenProjectWizard"/>
 <hide_toolbar_item_id id="org.eclipse.ui.edit.text.toggleShowSelectedElementOnly"/>
 <view id="org.eclipse.jdt.ui.PackageExplorer"/>
+<view id="org.eclipse.jdt.ui.TypeHierarchy"/>
 <view id="org.eclipse.ui.views.ProblemView"/>
 <view id="org.eclipse.jdt.ui.JavadocView"/>
 <view id="org.eclipse.jdt.ui.SourceView"/>
@@ -222,12 +269,13 @@
 <info folder="true" part="left">
 <folder activePageID="org.eclipse.jdt.ui.PackageExplorer" appearance="2" expanded="2">
 <page content="org.eclipse.jdt.ui.PackageExplorer" label="Package Explorer"/>
-<page content="org.eclipse.jdt.ui.TypeHierarchy" label="LabelNotFound"/>
+<page content="org.eclipse.jdt.ui.TypeHierarchy" label="Type Hierarchy"/>
 <page content="org.eclipse.ui.views.ResourceNavigator" label="LabelNotFound"/>
 <page content="org.eclipse.ui.navigator.ProjectExplorer" label="LabelNotFound"/>
 <page content="org.eclipse.jdt.junit.ResultView" label="LabelNotFound"/>
 <presentation id="org.eclipse.ui.presentations.WorkbenchPresentationFactory">
 <part id="0"/>
+<part id="1"/>
 </presentation>
 </folder>
 </info>
@@ -238,7 +286,7 @@
 <page content="org.eclipse.ui.cheatsheets.views.CheatSheetView" label="LabelNotFound"/>
 </folder>
 </info>
-<info part="org.eclipse.ui.editorss" ratio="0.24950495" ratioLeft="252" ratioRight="758" relationship="2" relative="left"/>
+<info part="org.eclipse.ui.editorss" ratio="0.23911439" ratioLeft="324" ratioRight="1031" relationship="2" relative="left"/>
 <info folder="true" part="bottom" ratio="0.64046824" ratioLeft="383" ratioRight="215" relationship="4" relative="org.eclipse.ui.editorss">
 <folder activePageID="org.eclipse.ui.console.ConsoleView" appearance="2" expanded="2">
 <page content="org.eclipse.ui.views.ProblemView" label="Problems"/>
@@ -271,13 +319,128 @@
 </perspective>
 </perspectives>
 <workingSets/>
-<navigationHistory/>
+<navigationHistory>
+<editors>
+<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" path="/Locadora/src/Main.java"/>
+<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" path="/Locadora/src/Visual/Home.java"/>
+<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" path="/Locadora/src/Visual/ClienteCadastrar.java"/>
+<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" path="/Locadora/src/Visual/ClienteConsultar.java"/>
+<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" path="/Locadora/src/RecursosHumanos/Cliente.java"/>
+<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" path="/Locadora/src/Run/Main.java"/>
+<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" path="/Locadora/src/Visual/FilmeCadastrar.java"/>
+<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" path="/Locadora/src/Locavel/Filme.java"/>
+<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" path="/Locadora/src/Locavel/Produto.java"/>
+<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" path="/Locadora/src/Run/Main.java"/>
+<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" path="/Locadora/src/Teste/Teste.java"/>
+<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" path="/Locadora/src/Visual/ClienteCadastrar.java"/>
+</editors>
+<item historyLabel="Main.java" index="0">
+<position info="not_deleted" x="0" y="0"/>
+</item>
+<item historyLabel="Home.java" index="1">
+<position info="not_deleted" x="254" y="0"/>
+</item>
+<item historyLabel="ClienteCadastrar.java" index="2">
+<position info="not_deleted" x="0" y="0"/>
+</item>
+<item historyLabel="ClienteConsultar.java" index="3">
+<position info="not_deleted" x="322" y="0"/>
+</item>
+<item historyLabel="Home.java" index="1">
+<position info="not_deleted" x="756" y="0"/>
+</item>
+<item historyLabel="Cliente.java" index="4">
+<position info="not_deleted" x="1820" y="25"/>
+</item>
+<item historyLabel="Main.java" index="5">
+<position info="not_deleted" x="0" y="0"/>
+</item>
+<item historyLabel="ClienteCadastrar.java" index="2">
+<position info="not_deleted" x="0" y="0"/>
+</item>
+<item historyLabel="ClienteCadastrar.java" index="2">
+<position info="not_deleted" x="1976" y="21"/>
+</item>
+<item historyLabel="ClienteCadastrar.java" index="2">
+<position info="not_deleted" x="6841" y="0"/>
+</item>
+<item historyLabel="FilmeCadastrar.java" index="6">
+<position info="not_deleted" x="430" y="14"/>
+</item>
+<item historyLabel="Home.java" index="1">
+<position info="not_deleted" x="756" y="0"/>
+</item>
+<item historyLabel="Main.java" index="0">
+<position info="not_deleted" x="0" y="0"/>
+</item>
+<item historyLabel="Home.java" index="1">
+<position info="not_deleted" x="756" y="0"/>
+</item>
+<item historyLabel="FilmeCadastrar.java" index="6">
+<position info="not_deleted" x="430" y="14"/>
+</item>
+<item historyLabel="Cliente.java" index="4">
+<position info="not_deleted" x="1906" y="0"/>
+</item>
+<item historyLabel="Filme.java" index="7">
+<position info="not_deleted" x="67" y="4"/>
+</item>
+<item historyLabel="Produto.java" index="8">
+<position info="not_deleted" x="0" y="0"/>
+</item>
+<item historyLabel="Filme.java" index="7">
+<position info="not_deleted" x="67" y="4"/>
+</item>
+<item historyLabel="Main.java" index="9">
+<position info="not_deleted" x="1103" y="0"/>
+</item>
+<item historyLabel="Teste.java" index="10">
+<position info="not_deleted" x="0" y="0"/>
+</item>
+<item historyLabel="Main.java" index="9">
+<position info="not_deleted" x="219" y="0"/>
+</item>
+<item historyLabel="FilmeCadastrar.java" index="6">
+<position info="not_deleted" x="556" y="0"/>
+</item>
+<item historyLabel="ClienteCadastrar.java" index="11">
+<position info="not_deleted" x="545" y="0"/>
+</item>
+<item historyLabel="Main.java" index="9">
+<position info="not_deleted" x="1202" y="0"/>
+</item>
+<item historyLabel="Home.java" index="1">
+<position info="not_deleted" x="3335" y="0"/>
+</item>
+<item historyLabel="ClienteCadastrar.java" index="11">
+<position info="not_deleted" x="768" y="0"/>
+</item>
+<item historyLabel="Cliente.java" index="4">
+<position info="not_deleted" x="302" y="0"/>
+</item>
+<item historyLabel="ClienteCadastrar.java" index="11">
+<position info="not_deleted" x="5721" y="0"/>
+</item>
+<item historyLabel="Main.java" index="9">
+<position info="not_deleted" x="1202" y="0"/>
+</item>
+<item historyLabel="Filme.java" index="7">
+<position info="not_deleted" x="67" y="4"/>
+</item>
+<item historyLabel="Cliente.java" index="4">
+<position info="not_deleted" x="302" y="0"/>
+</item>
+<item active="true" historyLabel="Main.java" index="9">
+<position info="not_deleted" x="1202" y="0"/>
+</item>
+</navigationHistory>
 <input factoryID="org.eclipse.ui.internal.model.ResourceFactory" path="/" type="8"/>
 </page>
 <workbenchWindowAdvisor/>
 <actionBarAdvisor/>
 <trimLayout>
 <trimArea IMemento.internal.id="128">
+<trimItem IMemento.internal.id="org.eclipse.mylyn.tasks.ui.trim.container"/>
 <trimItem IMemento.internal.id="org.eclipse.ui.internal.WorkbenchWindow.topBar"/>
 </trimArea>
 <trimArea IMemento.internal.id="1024">
@@ -288,6 +451,36 @@
 </trimLayout>
 </window>
 <mruList>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" name="Home.java" tooltip="Locadora/src/Visual/Home.java">
+<persistable path="/Locadora/src/Visual/Home.java"/>
+</file>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" name="ClienteCadastrar.java" tooltip="Locadora/src/Visual/ClienteCadastrar.java">
+<persistable path="/Locadora/src/Visual/ClienteCadastrar.java"/>
+</file>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" name="FilmeCadastrar.java" tooltip="Locadora/src/Visual/FilmeCadastrar.java">
+<persistable path="/Locadora/src/Visual/FilmeCadastrar.java"/>
+</file>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" name="Teste.java" tooltip="Locadora/src/Teste/Teste.java">
+<persistable path="/Locadora/src/Teste/Teste.java"/>
+</file>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" name="Main.java" tooltip="Locadora/src/Run/Main.java">
+<persistable path="/Locadora/src/Run/Main.java"/>
+</file>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" name="Produto.java" tooltip="Locadora/src/Locavel/Produto.java">
+<persistable path="/Locadora/src/Locavel/Produto.java"/>
+</file>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" name="Filme.java" tooltip="Locadora/src/Locavel/Filme.java">
+<persistable path="/Locadora/src/Locavel/Filme.java"/>
+</file>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" name="Cliente.java" tooltip="Locadora/src/RecursosHumanos/Cliente.java">
+<persistable path="/Locadora/src/RecursosHumanos/Cliente.java"/>
+</file>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" name="ClienteConsultar.java" tooltip="Locadora/src/Visual/ClienteConsultar.java">
+<persistable path="/Locadora/src/Visual/ClienteConsultar.java"/>
+</file>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" name="Main.java" tooltip="Locadora/src/Main.java">
+<persistable path="/Locadora/src/Main.java"/>
+</file>
 <file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" name="RegistroJaExiste.java" tooltip="Locadora/src/Banco/RegistroJaExiste.java">
 <persistable path="/Locadora/src/Banco/RegistroJaExiste.java"/>
 </file>
@@ -297,41 +490,11 @@
 <file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" name="Tabulavel.java" tooltip="Locadora/src/Banco/Tabulavel.java">
 <persistable path="/Locadora/src/Banco/Tabulavel.java"/>
 </file>
-<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" name="Filme.java" tooltip="Locadora/src/Locavel/Filme.java">
-<persistable path="/Locadora/src/Locavel/Filme.java"/>
-</file>
 <file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" name="Genero.java" tooltip="Locadora/src/Locavel/Genero.java">
 <persistable path="/Locadora/src/Locavel/Genero.java"/>
 </file>
-<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" name="Main.java" tooltip="Locadora/src/Main.java">
-<persistable path="/Locadora/src/Main.java"/>
-</file>
 <file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" name="CPF.java" tooltip="Locadora/src/Documentos/CPF.java">
 <persistable path="/Locadora/src/Documentos/CPF.java"/>
-</file>
-<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" name="CNPJ.java" tooltip="Locadora/src/Documentos/CNPJ.java">
-<persistable path="/Locadora/src/Documentos/CNPJ.java"/>
-</file>
-<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" name="CarteiraTrabalho.java" tooltip="Locadora/src/Documentos/CarteiraTrabalho.java">
-<persistable path="/Locadora/src/Documentos/CarteiraTrabalho.java"/>
-</file>
-<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" name="Documento.java" tooltip="Locadora/src/Documentos/Documento.java">
-<persistable path="/Locadora/src/Documentos/Documento.java"/>
-</file>
-<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" name="RG.java" tooltip="Locadora/src/Documentos/RG.java">
-<persistable path="/Locadora/src/Documentos/RG.java"/>
-</file>
-<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" name="Cliente.java" tooltip="Locadora/src/RecursosHumanos/Cliente.java">
-<persistable path="/Locadora/src/RecursosHumanos/Cliente.java"/>
-</file>
-<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" name="Pessoa.java" tooltip="Locadora/src/RecursosHumanos/Pessoa.java">
-<persistable path="/Locadora/src/RecursosHumanos/Pessoa.java"/>
-</file>
-<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" name="PessoaFisica.java" tooltip="Locadora/src/RecursosHumanos/PessoaFisica.java">
-<persistable path="/Locadora/src/RecursosHumanos/PessoaFisica.java"/>
-</file>
-<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" name="Teste.java" tooltip="Locadora/src/Teste/Teste.java">
-<persistable path="/Locadora/src/Teste/Teste.java"/>
 </file>
 </mruList>
 </workbench>

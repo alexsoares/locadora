@@ -22,7 +22,7 @@
 <entry path="/usr/lib/jvm/java-6-openjdk-amd64/jre/lib/endorsed"/>
 </endorsedDirs>
 </libraryInfo>
-<libraryInfo home="C:\Program Files\Java\jre7" version="1.7.0_05">
+<libraryInfo home="C:\Program Files\Java\jre7" version="1.7.0_04">
 <bootpath>
 <entry path="C:\Program Files\Java\jre7\lib\resources.jar"/>
 <entry path="C:\Program Files\Java\jre7\lib\rt.jar"/>

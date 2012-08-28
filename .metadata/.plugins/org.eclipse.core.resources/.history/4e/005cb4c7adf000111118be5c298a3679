@@ -1,0 +1,10 @@
+package Banco;
+
+public interface Tabulavel {
+
+	public boolean comparaCampoChave(String chave);
+	public boolean comparaCampoIndice(String chave);
+	public String retornaValorChave();
+	public void armazenaIndice( int indice);
+
+}
