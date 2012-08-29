@@ -204,7 +204,7 @@ public class ClienteCadastrar extends Home{
 		try {
 				RecursosHumanos.Cliente novoCliente = new RecursosHumanos.Cliente(
 						txNome.getText(),
-						Double.parseDouble(txCPF.getText()),
+						txCPF.getText(),
 						txRua.getText(),
 						Integer.parseInt(txNumero.getText()),
 						txBairro.getText(),

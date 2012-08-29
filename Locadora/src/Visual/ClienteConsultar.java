@@ -6,6 +6,8 @@ import javax.swing.JFrame;
 import javax.swing.JTable;
 import javax.swing.table.DefaultTableModel;
 
+import RecursosHumanos.Cliente;
+
 public class ClienteConsultar{
 
 	private JFrame frameClienteConsultar;
@@ -32,7 +34,7 @@ public class ClienteConsultar{
 
 	private void AdicionaLinhasTabela(){
 
-		ListIterator<RecursosHumanos.Cliente> iterator = Run.Main.clientes.listIterator(); 
+		ListIterator<RecursosHumanos.Cliente> iterator = (ListIterator<Cliente>) Run.Main.banco.ListCliente().listIterator(); ; 
 
 		while (iterator.hasNext()){
 			RecursosHumanos.Cliente tempCliente = iterator.next();

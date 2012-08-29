@@ -39,8 +39,8 @@ public class Home {
 		JMenuItem menuClienteRemover = new JMenuItem("Remover");
 		menuClienteRemover.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
-				double codigoClienteRemovido;
-				codigoClienteRemovido =	Double.parseDouble(JOptionPane.showInputDialog("Favor informar o código do cliente que deseja remover:"));
+				int codigoClienteRemovido;
+				codigoClienteRemovido =	 Integer.parseInt(JOptionPane.showInputDialog("Favor informar o código do cliente que deseja remover:"));
 				JOptionPane.showConfirmDialog(null, "Deseja realmente remover o cliente número:"+codigoClienteRemovido+"?");
 				Run.Main.removerCliente(codigoClienteRemovido);
 			}

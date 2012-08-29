@@ -1,6 +1,8 @@
 package Banco;
 
 import java.util.ArrayList;
+import java.util.LinkedList;
+
 import Locavel.Midia;
 import RecursosHumanos.Cliente;
 
@@ -9,8 +11,8 @@ public class Banco {
 	/*
 	 * Declaração das listas do Banco 
 	 */
-	ArrayList<Midia> midia;
-	// ArrayList<Cliente> cliente;
+	ArrayList<Midia> midia = new ArrayList<Midia>();
+	ArrayList<Cliente> cliente = new ArrayList<Cliente>();
 	
 	public Banco() {
 		this.midia = new ArrayList<Midia>();
@@ -165,17 +167,32 @@ public class Banco {
 		return (Midia) consultaDaLista( (ArrayList) this.midia, indice);
 	}
 	
-	public ArrayList<Midia> ListMidia () {
-		return midia;
-	}
+	public LinkedList<Midia> ListMidia () {
+
+        LinkedList<Midia> lista = new LinkedList<Midia>();
+        Midia registro;
+       
+        for (int i = 0; i < midia.size(); i++) {
+           
+            registro = midia.get(i);
+           
+            if ( registro != null ) {
+           
+                lista.add(registro);
+               
+            }
+           
+        }
+       
+        return lista;
+    }
 	
 	/*
 	 * Classe para manipulação de Cliente
 	 */
 	
-	/*
     public void Insere ( Cliente cliente ) throws RegistroJaExiste{
-		insereNaLista( (ArrayList) this.midia, (Tabulavel) cliente);
+		insereNaLista( (ArrayList) this.cliente, (Tabulavel) cliente);
 	}
 		
     public void ExcluiCliente ( String chave ) throws RegistroInexistente{
@@ -198,10 +215,27 @@ public class Banco {
 		return (Cliente) consultaDaLista( (ArrayList) this.cliente, indice);
 	}
 	
-	public ArrayList<Cliente> ListCliente () {
-		return cliente;
-	}
-	*/
+
+    public LinkedList<Cliente> ListCliente () {
+    	
+        LinkedList<Cliente> lista = new LinkedList<Cliente>();
+        
+        Cliente registro;
+        
+        for (int i = 0; i < cliente.size(); i++) {
+           
+            registro = cliente.get(i);
+           
+            if ( registro != null ) {
+           
+                lista.addLast(registro);
+               
+            }
+           
+        }
+        
+        return lista;
+    }
 	
 	public void showMidia ( ) {
 		
