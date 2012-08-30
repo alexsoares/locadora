@@ -3,7 +3,7 @@ package Banco;
 public class RegistroInexistente extends Exception {
 
 	public RegistroInexistente(String chave) {
-		super("Registro " + chave + " nï¿½o existente.");
+		super("Registro " + chave + " não existente.");
 	}
 	  
 }

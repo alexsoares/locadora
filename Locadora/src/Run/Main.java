@@ -33,19 +33,4 @@ public class Main {
 		
 	}
 	
-	public static void addCliente(RecursosHumanos.Cliente cliente){
-		try {
-			banco.Insere(cliente);
-		} catch (RegistroJaExiste e) {
-			e.printStackTrace();
-		}
-	}
-	
-	public static void removerCliente(int codigoCliente){
-		try {
-			banco.ExcluiCliente(codigoCliente);
-		} catch (RegistroInexistente e) {
-			e.printStackTrace();
-		}
-	}
 }

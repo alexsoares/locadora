@@ -1,5 +1,8 @@
 package Visual;
 import javax.swing.*;
+
+import Banco.RegistroInexistente;
+
 import java.awt.*;
 import java.awt.event.*;
 import java.util.ListIterator;
@@ -42,7 +45,12 @@ public class Home {
 				int codigoClienteRemovido;
 				codigoClienteRemovido =	 Integer.parseInt(JOptionPane.showInputDialog("Favor informar o código do cliente que deseja remover:"));
 				JOptionPane.showConfirmDialog(null, "Deseja realmente remover o cliente número:"+codigoClienteRemovido+"?");
-				Run.Main.removerCliente(codigoClienteRemovido);
+				try {
+					Run.Main.banco.ExcluiCliente(codigoClienteRemovido);
+				} catch (RegistroInexistente e) {
+					JOptionPane.showMessageDialog(null,e.getMessage(),"Registro não encontrado",JOptionPane.ERROR_MESSAGE);
+					e.printStackTrace();
+				}
 			}
 		});
 		JMenuItem menuClienteAtualizar = new JMenuItem("Atualizar");

@@ -90,7 +90,7 @@ public class Cliente implements Tabulavel {
 	}
 
 	public boolean comparaCampoChave(String chave) {
-		if ( this.cpf == chave ) {
+		if ( this.cpf.equals(chave) ) {
 			return true;
 		}
 		else {

@@ -45,6 +45,18 @@ public class Banco {
 		
 	}
 	
+	private Tabulavel consultaDaLista ( ArrayList<Tabulavel> lista, String chave ) throws RegistroInexistente {
+		
+		int indice = retornaIndice(lista, chave);
+		
+		if ( indice == -1 ) {
+			throw new RegistroInexistente(chave);
+		}
+		else {
+			return lista.get(indice);
+		}
+	}
+
 	private int verificaChaveDuplicada ( ArrayList<Tabulavel> lista, String valorChave, int indiceNaoVerificado ) {
 		
 		int retorno = -1;
@@ -71,16 +83,18 @@ public class Banco {
 	
 	private void insereNaLista ( ArrayList<Tabulavel> lista, Tabulavel registro ) throws RegistroJaExiste {
 			
-		String indice = registro.retornaValorChave();
+		String chave = registro.retornaValorChave();
 		int tamanho = lista.size();
 
-		if ( retornaIndice(lista, indice) == -1 ) {
+		if ( retornaIndice(lista, chave) == -1 ) {
 			registro.setIndice(tamanho);
 			lista.add(tamanho,registro);
 		}
 		else {
 			throw new RegistroJaExiste(registro.retornaValorChave());
 		}
+		
+
 	}
 		
 	private void alteraNaLista ( ArrayList<Tabulavel> lista, Tabulavel registro ) throws RegistroInexistente, RegistroJaExiste {
@@ -113,21 +127,14 @@ public class Banco {
 	}
 
 	private void removeDaLista ( ArrayList<Tabulavel> lista, int indice ) throws RegistroInexistente {
-		lista.set(indice, null);
-	}
-	
-	private Tabulavel consultaDaLista ( ArrayList<Tabulavel> lista, String chave ) throws RegistroInexistente {
-		
-		int indice = retornaIndice(lista, chave);
-		
-		if ( indice == -1 ) {
-			throw new RegistroInexistente(chave);
+		if ( indice < lista.size() ) {
+			lista.set(indice, null);
 		}
 		else {
-			return lista.get(indice);
+			throw new RegistroInexistente(" "+indice+" ");
 		}
 	}
-
+	
 	private Tabulavel consultaDaLista ( ArrayList<Tabulavel> lista, int indice ) throws RegistroInexistente {
 		
 		Tabulavel registro = lista.get(indice);
