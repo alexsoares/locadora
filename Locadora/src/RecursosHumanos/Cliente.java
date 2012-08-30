@@ -78,6 +78,10 @@ public class Cliente {
 	public double getCodigoCliente() {
 		return codigoCliente;
 	}
+	public void setCodigoCliente(double codigoCliente){
+		this.codigoCliente = codigoCliente;
+	}
+	
 	public Date getDataNascimento() {
 		return dataNascimento;
 	}
