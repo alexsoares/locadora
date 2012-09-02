@@ -1,8 +1,5 @@
 package Visual;
 import javax.swing.*;
-
-import Banco.RegistroInexistente;
-
 import java.awt.*;
 import java.awt.event.*;
 import java.util.ListIterator;
@@ -23,7 +20,7 @@ public class Home {
 	
 	private void menuBar() {
 		JMenuBar menuBar = new JMenuBar();
-		menuBar.setBounds(0, 0, 434, 21);
+		menuBar.setBounds(0, 0, 450, 21);
 		frameHome.getContentPane().add(menuBar);
 		
 		JMenu menuFilmes = new JMenu("Filmes");
@@ -40,20 +37,38 @@ public class Home {
 		JMenuItem menuClienteCadastrar = new JMenuItem("Cadastrar");
 		JMenuItem menuClienteConsultar = new JMenuItem("Consultar");
 		JMenuItem menuClienteRemover = new JMenuItem("Remover");
+		
 		menuClienteRemover.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
-				int codigoClienteRemovido;
-				codigoClienteRemovido =	 Integer.parseInt(JOptionPane.showInputDialog("Favor informar o código do cliente que deseja remover:"));
-				JOptionPane.showConfirmDialog(null, "Deseja realmente remover o cliente número:"+codigoClienteRemovido+"?");
-				try {
-					Run.Main.banco.ExcluiCliente(codigoClienteRemovido);
-				} catch (RegistroInexistente e) {
-					JOptionPane.showMessageDialog(null,e.getMessage(),"Registro não encontrado",JOptionPane.ERROR_MESSAGE);
-					e.printStackTrace();
+				
+				double codigoClienteRemovido = 0;
+				
+				String validaDado =JOptionPane.showInputDialog("Favor informar o código do cliente que deseja remover:");
+				
+				if(validaDado ==null){
+					JOptionPane.showMessageDialog(null,"Operação Cancelada.");
+				}
+				else
+				{
+					codigoClienteRemovido =Double.parseDouble(validaDado);
+					if (JOptionPane.showConfirmDialog(null, "Deseja realmente remover o cliente número: "+codigoClienteRemovido+"?") == 0){
+						Run.Main.removerCliente(codigoClienteRemovido);
+					}
+					else
+					{
+						JOptionPane.showMessageDialog(null,"Operação Cancelada.");
+					}
 				}
 			}
 		});
 		JMenuItem menuClienteAtualizar = new JMenuItem("Atualizar");
+		menuClienteAtualizar.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				
+				ClienteAtualizar atualizarCliente = new ClienteAtualizar();
+				
+			}
+		});
 		
 		menuBar.add(menuFilmes);
 		menuFilmes.add(menuFilmesCadastrar);
@@ -99,9 +114,9 @@ public class Home {
 		frameHome.setTitle("Locadora Unisal - Home");
 		frameHome.setBounds(100, 100, 450, 300);
 		frameHome.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		frameHome.setResizable(false);
 	}
 }
-		
 		
 		
 		

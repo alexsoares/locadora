@@ -1,26 +1,26 @@
+
 package RecursosHumanos;
 
 import java.text.SimpleDateFormat;
 import java.util.Date;
 
-import Banco.Tabulavel;
-
-public class Cliente implements Tabulavel {
+public class Cliente {
 
 	private String nome;
-	private String cpf;
+	private double cpf;
 	private String rua;
 	private int numero;
 	private String bairro;
 	private String cidade;
 	private String email;
-	private int codigoCliente;
+	private double codigoCliente;
 	private Date dataNascimento;
+	private static double quantidadeClientes;
 	
 	
 	
 	@SuppressWarnings("static-access")
-	public Cliente(String nome, String cpf, String rua, int numero,
+	public Cliente(String nome, double cpf, String rua, int numero,
 			String bairro, String cidade, String email, Date dataNascimento) {
 		this.nome = nome;
 		this.cpf = cpf;
@@ -30,7 +30,8 @@ public class Cliente implements Tabulavel {
 		this.cidade = cidade;
 		this.email = email;
 		this.dataNascimento = dataNascimento;
-		this.codigoCliente = -1;
+		this.quantidadeClientes = this.quantidadeClientes +1;
+		this.codigoCliente = this.quantidadeClientes;
 	}
 	
 	public String getNome() {
@@ -39,10 +40,10 @@ public class Cliente implements Tabulavel {
 	public void setNome(String nome) {
 		this.nome = nome;
 	}
-	public String getCpf() {
+	public double getCpf() {
 		return cpf;
 	}
-	public void setCpf(String cpf) {
+	public void setCpf(double cpf) {
 		this.cpf = cpf;
 	}
 	public String getRua() {
@@ -75,9 +76,13 @@ public class Cliente implements Tabulavel {
 	public void setEmail(String email) {
 		this.email = email;
 	}
-	public int getCodigoCliente() {
+	public double getCodigoCliente() {
 		return codigoCliente;
 	}
+	public void setCodigoCliente(double codigoCliente){
+		this.codigoCliente = codigoCliente;
+	}
+	
 	public Date getDataNascimento() {
 		return dataNascimento;
 	}
@@ -88,28 +93,8 @@ public class Cliente implements Tabulavel {
 	public void setDataNascimento(Date dataNascimento) {
 		this.dataNascimento = dataNascimento;
 	}
-
-	public boolean comparaCampoChave(String chave) {
-		if ( this.cpf.equals(chave) ) {
-			return true;
-		}
-		else {
-			return false;
-		}
-	}
-
-	public String retornaValorChave() {
-		return cpf;
-	}
-
-	public void setIndice(int indice) {
-		this.codigoCliente = indice;
-	}
-
-	public int getIndice() {
-		return this.codigoCliente;
-	}
 	
 	
 	
 }
+

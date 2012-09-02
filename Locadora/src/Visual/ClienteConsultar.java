@@ -1,3 +1,4 @@
+
 package Visual;
 
 import java.awt.BorderLayout;
@@ -5,8 +6,6 @@ import java.util.ListIterator;
 import javax.swing.JFrame;
 import javax.swing.JTable;
 import javax.swing.table.DefaultTableModel;
-
-import RecursosHumanos.Cliente;
 
 public class ClienteConsultar{
 
@@ -20,25 +19,48 @@ public class ClienteConsultar{
 		AdicionaLinhasTabela();
 	}
 	
-	private void CriaTabela() {
+	public DefaultTableModel getModeloTabela(){
+		return modelo;
+	}
+	
+	public void setModeloTabela(DefaultTableModel  modelo){
+		this.modelo = modelo;
+	}
+	
+	
+	public void AdicionarLinhaModelo (Object a []){
+		this.modelo.addRow(a);
+	}
+	
+	
+	@SuppressWarnings("serial")
+	public void CriaTabela() {
 		
 		String[] columns = new String[]{"Código","Nome","CPF","Rua","Número","Bairro","Cidade","E-mail","Data Nascimento"};
 		
 		modelo = new DefaultTableModel(null,columns);
-		tbClientes = new JTable(modelo);
+		tbClientes = new JTable(modelo)
+		{
+			boolean[] columnEditables = new boolean[] {
+				false, false, false, false, false, false, false, false, false
+			};
+			public boolean isCellEditable(int row, int column) {
+				return columnEditables[column];
+		}};
 		tbClientes.setBounds(20,75, 380, 100);
+		
 		frameClienteConsultar.add(tbClientes.getTableHeader(),BorderLayout.PAGE_START);
 		frameClienteConsultar.add(tbClientes,BorderLayout.CENTER);
 				
 	}
 
-	private void AdicionaLinhasTabela(){
-
-		ListIterator<RecursosHumanos.Cliente> iterator = (ListIterator<Cliente>) Run.Main.banco.ListCliente().listIterator(); ; 
+	public void AdicionaLinhasTabela(){
+		
+		ListIterator<RecursosHumanos.Cliente> iterator = Run.Main.clientes.listIterator(); 
 
 		while (iterator.hasNext()){
 			RecursosHumanos.Cliente tempCliente = iterator.next();
-			modelo.addRow(new Object[]
+			AdicionarLinhaModelo(new Object[]
 					{
 					tempCliente.getCodigoCliente(),
 					tempCliente.getNome(),
@@ -64,3 +86,4 @@ public class ClienteConsultar{
 		frameClienteConsultar.setBounds(100, 100, 800, 300);
 	}
 }
+

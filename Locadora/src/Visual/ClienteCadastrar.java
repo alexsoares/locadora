@@ -10,11 +10,8 @@ import javax.swing.SwingConstants;
 import java.awt.Font;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
-
 import javax.swing.JTextField;
 import javax.swing.JButton;
-
-import Banco.RegistroJaExiste;
 
 
 public class ClienteCadastrar extends Home{
@@ -206,7 +203,7 @@ public class ClienteCadastrar extends Home{
 		try {
 				RecursosHumanos.Cliente novoCliente = new RecursosHumanos.Cliente(
 						txNome.getText(),
-						txCPF.getText(),
+						Double.parseDouble(txCPF.getText()),
 						txRua.getText(),
 						Integer.parseInt(txNumero.getText()),
 						txBairro.getText(),
@@ -214,7 +211,7 @@ public class ClienteCadastrar extends Home{
 						txEmail.getText(),
 						FormatDate.parse(txDataNascimento.getText()));
 				
-				Run.Main.banco.Insere(novoCliente);
+				Run.Main.addCliente(novoCliente);
 				
 				JOptionPane.showMessageDialog(null,"Cliente cadastrado com sucesso!");
 				LimparDadosDaTela();
@@ -224,9 +221,6 @@ public class ClienteCadastrar extends Home{
 				e.printStackTrace();
 			} catch (ParseException e) {
 				JOptionPane.showMessageDialog(null,e.getMessage(),"Valor não esperado",JOptionPane.WARNING_MESSAGE);
-				e.printStackTrace();
-			} catch (RegistroJaExiste e) {
-				JOptionPane.showMessageDialog(null,e.getMessage(),"Valor não esperado",JOptionPane.ERROR_MESSAGE);
 				e.printStackTrace();
 			}
 		}
