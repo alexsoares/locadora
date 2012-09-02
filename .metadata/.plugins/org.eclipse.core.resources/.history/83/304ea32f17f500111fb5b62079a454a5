@@ -1,0 +1,14 @@
+package Banco;
+
+public class RegistroJaExiste extends Exception {
+
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
+
+	public RegistroJaExiste(String chave) {
+		super("Registro " + chave + " já existe.");
+	}
+	  
+}
