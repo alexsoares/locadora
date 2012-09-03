@@ -1,7 +1,15 @@
 package Banco;
 
 import java.util.ArrayList;
+<<<<<<< HEAD
 import java.util.LinkedList;
+=======
+import java.util.HashMap;
+import java.util.Iterator;
+import java.util.LinkedList;
+import java.util.Map;
+import java.util.Set;
+>>>>>>> bruno/master
 
 import Locavel.Midia;
 import RecursosHumanos.Cliente;
@@ -14,6 +22,12 @@ public class Banco {
 	ArrayList<Midia> midia = new ArrayList<Midia>();
 	ArrayList<Cliente> cliente = new ArrayList<Cliente>();
 	
+<<<<<<< HEAD
+=======
+	Map midias = new HashMap();
+	Map clientes = new HashMap();
+	
+>>>>>>> bruno/master
 	public Banco() {
 		this.midia = new ArrayList<Midia>();
 	}
@@ -22,10 +36,17 @@ public class Banco {
 	 * Classes internas 
 	 */
 	
+<<<<<<< HEAD
 	private int retornaIndice ( ArrayList<Tabulavel> lista, String valorChave ) {
 		
 		int retorno = -1;
 		Tabulavel registro;
+=======
+	private int retornaIndice ( ArrayList<Tabelavel> lista, String valorChave ) {
+		
+		int retorno = -1;
+		Tabelavel registro;
+>>>>>>> bruno/master
 		
 		for (int i = 0; i < lista.size(); i++) {
 			
@@ -45,7 +66,11 @@ public class Banco {
 		
 	}
 	
+<<<<<<< HEAD
 	private Tabulavel consultaDaLista ( ArrayList<Tabulavel> lista, String chave ) throws RegistroInexistente {
+=======
+	private Tabelavel consultaDaLista ( ArrayList<Tabelavel> lista, String chave ) throws RegistroInexistente {
+>>>>>>> bruno/master
 		
 		int indice = retornaIndice(lista, chave);
 		
@@ -57,10 +82,17 @@ public class Banco {
 		}
 	}
 
+<<<<<<< HEAD
 	private int verificaChaveDuplicada ( ArrayList<Tabulavel> lista, String valorChave, int indiceNaoVerificado ) {
 		
 		int retorno = -1;
 		Tabulavel registro;
+=======
+	private int verificaChaveDuplicada ( ArrayList<Tabelavel> lista, String valorChave, int indiceNaoVerificado ) {
+		
+		int retorno = -1;
+		Tabelavel registro;
+>>>>>>> bruno/master
 		
 		for (int i = 0; i < lista.size(); i++) {
 			
@@ -81,7 +113,11 @@ public class Banco {
 		
 	}
 	
+<<<<<<< HEAD
 	private void insereNaLista ( ArrayList<Tabulavel> lista, Tabulavel registro ) throws RegistroJaExiste {
+=======
+	private void insereNaLista ( ArrayList<Tabelavel> lista, Tabelavel registro ) throws RegistroJaExiste {
+>>>>>>> bruno/master
 			
 		String chave = registro.retornaValorChave();
 		int tamanho = lista.size();
@@ -97,6 +133,7 @@ public class Banco {
 
 	}
 		
+<<<<<<< HEAD
 	private void alteraNaLista ( ArrayList<Tabulavel> lista, Tabulavel registro ) throws RegistroInexistente, RegistroJaExiste {
 		
 		int indice = registro.getIndice();
@@ -110,11 +147,33 @@ public class Banco {
 		}
 		else {
 			lista.remove(indice);
+=======
+	private void alteraNaLista ( ArrayList<Tabelavel> lista, Tabelavel registro ) throws RegistroInexistente, RegistroJaExiste {
+		System.out.println("alteraNaLista.01."+registro.retornaValorChave());
+		int indice = registro.getIndice();
+		System.out.println("alteraNaLista.02."+indice);
+		if ( verificaChaveDuplicada(lista, registro.retornaValorChave(), indice) != -1) {
+			throw new RegistroJaExiste(registro.retornaValorChave());
+		}
+		System.out.println("alteraNaLista.03");
+		if ( indice == -1 ) {
+			System.out.println("alteraNaLista.04");
+			throw new RegistroInexistente(registro.retornaValorChave());
+		}
+		else {
+			System.out.println("alteraNaLista.05");
+			lista.remove(indice);
+			System.out.println("alteraNaLista.06");
+>>>>>>> bruno/master
 			lista.add(indice,registro);
 		}
 	}
 	
+<<<<<<< HEAD
 	private void removeDaLista ( ArrayList<Tabulavel> lista, String chave ) throws RegistroInexistente {
+=======
+	private void removeDaLista ( ArrayList<Tabelavel> lista, String chave ) throws RegistroInexistente {
+>>>>>>> bruno/master
 		
 		int indice = retornaIndice(lista, chave);
 		
@@ -126,7 +185,11 @@ public class Banco {
 		}
 	}
 
+<<<<<<< HEAD
 	private void removeDaLista ( ArrayList<Tabulavel> lista, int indice ) throws RegistroInexistente {
+=======
+	private void removeDaLista ( ArrayList<Tabelavel> lista, int indice ) throws RegistroInexistente {
+>>>>>>> bruno/master
 		if ( indice < lista.size() ) {
 			lista.set(indice, null);
 		}
@@ -135,9 +198,15 @@ public class Banco {
 		}
 	}
 	
+<<<<<<< HEAD
 	private Tabulavel consultaDaLista ( ArrayList<Tabulavel> lista, int indice ) throws RegistroInexistente {
 		
 		Tabulavel registro = lista.get(indice);
+=======
+	private Tabelavel consultaDaLista ( ArrayList<Tabelavel> lista, int indice ) throws RegistroInexistente {
+		
+		Tabelavel registro = lista.get(indice);
+>>>>>>> bruno/master
 		
 		if ( registro == null ) {
 			throw new RegistroInexistente("vazio");
@@ -151,7 +220,11 @@ public class Banco {
 	 */
 	
     public void Insere ( Midia midia ) throws RegistroJaExiste{
+<<<<<<< HEAD
 		insereNaLista( (ArrayList) this.midia, (Tabulavel) midia);
+=======
+		insereNaLista( (ArrayList) this.midia, (Tabelavel) midia);
+>>>>>>> bruno/master
 	}
 		
     public void ExcluiMidia ( String chave ) throws RegistroInexistente{
@@ -163,7 +236,11 @@ public class Banco {
 	}
 	
 	public void Altera ( Midia midia) throws RegistroInexistente, RegistroJaExiste{
+<<<<<<< HEAD
 		alteraNaLista( (ArrayList) this.midia, (Tabulavel) midia);
+=======
+		alteraNaLista( (ArrayList) this.midia, (Tabelavel) midia);
+>>>>>>> bruno/master
 	}
 	
 	public Midia ConsultaMidia ( String chave ) throws RegistroInexistente{
@@ -177,6 +254,10 @@ public class Banco {
 	public LinkedList<Midia> ListMidia () {
 
         LinkedList<Midia> lista = new LinkedList<Midia>();
+<<<<<<< HEAD
+=======
+        
+>>>>>>> bruno/master
         Midia registro;
        
         for (int i = 0; i < midia.size(); i++) {
@@ -199,7 +280,11 @@ public class Banco {
 	 */
 	
     public void Insere ( Cliente cliente ) throws RegistroJaExiste{
+<<<<<<< HEAD
 		insereNaLista( (ArrayList) this.cliente, (Tabulavel) cliente);
+=======
+		insereNaLista( (ArrayList) this.cliente, (Tabelavel) cliente);
+>>>>>>> bruno/master
 	}
 		
     public void ExcluiCliente ( String chave ) throws RegistroInexistente{
@@ -211,7 +296,11 @@ public class Banco {
 	}
 	
 	public void Altera ( Cliente cliente) throws RegistroInexistente, RegistroJaExiste{
+<<<<<<< HEAD
 		alteraNaLista( (ArrayList) this.cliente, (Tabulavel) cliente);
+=======
+		alteraNaLista( (ArrayList) this.cliente, (Tabelavel) cliente);
+>>>>>>> bruno/master
 	}
 	
 	public Cliente ConsultaCliente ( String chave ) throws RegistroInexistente{
@@ -263,5 +352,36 @@ public class Banco {
 		}
 		
 	}
+<<<<<<< HEAD
 	
+=======
+	/*
+	public static void main(String[] args) {
+		//criacao banco
+		Map banco = new HashMap();
+		Map midias = new HashMap();
+		Map clientes = new HashMap();
+		banco.put(Entities.MIDIA, midias);
+		banco.put(Entities.CLIENTES, clientes);
+		
+		//salvar um midia
+		Map medias = (Map) banco.get(Entities.MIDIA);
+		
+		Midia midia = new Midia("1", "desc");
+		medias.put(1,  midia);
+		
+		midia = new Midia("2", "desc");
+		medias.put(2,  midia);
+		
+		medias.get(2);
+		
+		for (Iterator iterator =medias.entrySet().iterator(); iterator.hasNext();) {
+				//entryset
+	}	
+		
+		
+	}
+	*/
+	 
+>>>>>>> bruno/master
 }

@@ -1,8 +1,14 @@
 package Locavel;
 
+<<<<<<< HEAD
 import Banco.Tabulavel;
 
 public class Midia implements Tabulavel {
+=======
+import Banco.Tabelavel;
+
+public class Midia implements Tabelavel {
+>>>>>>> bruno/master
 
 	int indice;
 	String codigo;
@@ -31,7 +37,11 @@ public class Midia implements Tabulavel {
 	}
 	
 	public boolean comparaCampoChave(String chave) {
+<<<<<<< HEAD
 		if ( this.codigo == chave ) {
+=======
+		if ( this.codigo.equals(chave) ) {
+>>>>>>> bruno/master
 			return true;
 		}
 		else {

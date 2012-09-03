@@ -2,8 +2,10 @@ package Visual;
 
 import java.awt.BorderLayout;
 import java.awt.Color;
+import java.awt.List;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
+import java.util.LinkedList;
 import java.util.ListIterator;
 import javax.swing.JFrame;
 import javax.swing.JOptionPane;
@@ -13,6 +15,11 @@ import java.awt.SystemColor;
 import javax.swing.JMenuBar;
 import javax.swing.JMenu;
 import javax.swing.JMenuItem;
+
+import Banco.RegistroInexistente;
+import Banco.RegistroJaExiste;
+import RecursosHumanos.Cliente;
+
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
 
@@ -86,7 +93,10 @@ public class ClienteAtualizar {
 					
 					try{
 						
-						ListIterator<RecursosHumanos.Cliente> iterator = Run.Main.BuscarClientePorCodigo(Double.parseDouble(criterioDaPesquisa)).listIterator();
+						LinkedList<Cliente> clientesEncontrados = new LinkedList<Cliente>();
+						clientesEncontrados.add(Run.Main.banco.ConsultaCliente(Integer.parseInt(criterioDaPesquisa)));
+
+						ListIterator<RecursosHumanos.Cliente> iterator = clientesEncontrados.listIterator();
 						
 						while (iterator.hasNext()){
 							
@@ -137,7 +147,10 @@ public class ClienteAtualizar {
 					
 					try{
 						
-						ListIterator<RecursosHumanos.Cliente> iterator = Run.Main.BuscarClientePorCPF(Double.parseDouble(criterioDaPesquisa)).listIterator();
+						LinkedList<RecursosHumanos.Cliente> clientesEncontrados = new LinkedList<RecursosHumanos.Cliente>();
+						clientesEncontrados.add(Run.Main.banco.ConsultaCliente(criterioDaPesquisa));
+						
+						ListIterator<RecursosHumanos.Cliente> iterator = clientesEncontrados.listIterator();
 						
 						while (iterator.hasNext()){
 							
@@ -188,7 +201,7 @@ public class ClienteAtualizar {
 					
 					RecursosHumanos.Cliente clienteAtualizar =	new RecursosHumanos.Cliente(						
 							tabelaClientesAtualizar.getValueAt(0,1).toString(),//Nome 
-							Double.parseDouble(tabelaClientesAtualizar.getValueAt(0,2).toString()),//cpf 
+							tabelaClientesAtualizar.getValueAt(0,2).toString(),//cpf 
 							tabelaClientesAtualizar.getValueAt(0,3).toString(),//rua 
 							Integer.parseInt(tabelaClientesAtualizar.getValueAt(0,4).toString()),//numero
 							tabelaClientesAtualizar.getValueAt(0,5).toString(),//bairro
@@ -196,14 +209,18 @@ public class ClienteAtualizar {
 							tabelaClientesAtualizar.getValueAt(0,7).toString(),//e-mail
 							FormatDate.parse(tabelaClientesAtualizar.getValueAt(0,8).toString()));
 					
-					clienteAtualizar.setCodigoCliente(Double.parseDouble(tabelaClientesAtualizar.getValueAt(0, 0).toString()));
+					clienteAtualizar.setCodigoCliente(Integer.parseInt(tabelaClientesAtualizar.getValueAt(0, 0).toString()));
 					
-					Run.Main.atualizarDadosDoCliente(clienteAtualizar);
+					Run.Main.banco.Altera(clienteAtualizar);
 				} catch (NumberFormatException e1) {
 					JOptionPane.showMessageDialog(null, e1);
 				} catch (ParseException e1) {
 					JOptionPane.showMessageDialog(null, e1);
-					}
+				} catch (RegistroInexistente e1) {
+					JOptionPane.showMessageDialog(null, e1);
+				} catch (RegistroJaExiste e1) {
+					JOptionPane.showMessageDialog(null, e1);
+				}
 				}
 			}
 		);
