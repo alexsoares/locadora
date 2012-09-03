@@ -8,6 +8,7 @@ import java.util.Map;
 import java.util.Set;
 
 import Locavel.Midia;
+import Locavel.Genero;
 import RecursosHumanos.Cliente;
 
 public class Banco {
@@ -17,7 +18,7 @@ public class Banco {
 	 */
 	ArrayList<Midia> midia = new ArrayList<Midia>();
 	ArrayList<Cliente> cliente = new ArrayList<Cliente>();
-	
+	ArrayList<Genero> genero = new ArrayList<Genero>();	
 	Map midias = new HashMap();
 	Map clientes = new HashMap();
 	
@@ -205,6 +206,27 @@ public class Banco {
         return lista;
     }
 	
+/* Genero
+ * 
+ */
+	
+    public void Insere ( Genero genero ) throws RegistroJaExiste{
+		insereNaLista( (ArrayList) this.genero, (Tabelavel) genero);
+	}
+    public void ExcluiGenero ( String chave ) throws RegistroInexistente{
+		removeDaLista( (ArrayList) this.genero, chave);
+	}
+	public Genero ConsultaGenero ( String chave ) throws RegistroInexistente{
+		return (Genero) consultaDaLista( (ArrayList) this.genero, chave);
+	}
+
+	public void AlteraGenero ( Genero genero) throws RegistroInexistente, RegistroJaExiste{
+		alteraNaLista( (ArrayList) this.genero, (Tabelavel) genero);
+	}
+
+	
+// Fim Genero
+	
 	/*
 	 * Classe para manipula��o de Cliente
 	 */
@@ -254,6 +276,27 @@ public class Banco {
         
         return lista;
     }
+
+    public void showGenero ( ) {
+		
+		Genero registro;
+		
+		for (int i = 0; i < genero.size(); i++) {
+			
+			registro = genero.get(i);
+			
+			if ( registro != null ) {
+							
+				System.out.println( "Genero " + registro.getIndice() +
+									" c�digo " + registro.getCodigo()  +
+									" e descri��o " + registro.getDescricao() + ".");
+			
+			}
+			
+		}
+		
+	}
+
 	
 	public void showMidia ( ) {
 		
@@ -274,7 +317,7 @@ public class Banco {
 		}
 		
 	}
-	/*
+	/*	
 	public static void main(String[] args) {
 		//criacao banco
 		Map banco = new HashMap();

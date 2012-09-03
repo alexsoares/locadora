@@ -7,10 +7,14 @@ public class Genero implements  Tabelavel {
 
 	private String nome;
 	private String descricao;
+	private String codigo;
+	private int indice;
 	
 	
 	
-	public Genero(String nome, String descricao){
+	public Genero(String codigo,String nome, String descricao){
+		this.indice = -1;
+		this.codigo = codigo;
 		this.nome = nome;
 		this.descricao = descricao;
 
@@ -28,29 +32,34 @@ public class Genero implements  Tabelavel {
 	public void setDescricao(String descricao) {
 		this.descricao = descricao;
 	}
+	public String getCodigo() {
+		return this.codigo;
+	}
 
 	@Override
 	public boolean comparaCampoChave(String chave) {
-		// TODO Auto-generated method stub
-		return false;
+		if ( this.codigo.equals(chave) ) {
+			return true;
+		}
+		else {
+			return false;
+		}
 	}
 
-	@Override
+	
 	public String retornaValorChave() {
-		// TODO Auto-generated method stub
-		return null;
+		return this.codigo;
 	}
 
-	@Override
+	
 	public void setIndice(int indice) {
-		// TODO Auto-generated method stub
+		this.indice = indice;
 		
 	}
 
-	@Override
+	
 	public int getIndice() {
-		// TODO Auto-generated method stub
-		return 0;
+		return this.indice;
 	}	
 	
 }

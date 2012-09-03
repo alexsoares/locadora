@@ -2,5 +2,5 @@ package Banco;
 
 public enum Entities {
 
-	MIDIA, CLIENTE;
+	MIDIA, CLIENTE, GENERO;
 }
