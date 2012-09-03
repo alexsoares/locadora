@@ -1,15 +1,13 @@
 package Locavel;
 
-import java.util.ArrayList;
-import java.util.LinkedList;
-import java.util.List;
-import java.util.ListIterator;
+import Banco.Tabulavel;
 
-public class Genero {
+
+public class Genero implements  Tabulavel {
 
 	private String nome;
 	private String descricao;
-	List<Filme> filmes = new LinkedList<Filme>();
+	
 	
 	
 	public Genero(String nome, String descricao){
@@ -30,28 +28,29 @@ public class Genero {
 	public void setDescricao(String descricao) {
 		this.descricao = descricao;
 	}
-	
-	public void addFilme (Filme filme){
-		this.filmes.add(filme);
+
+	@Override
+	public boolean comparaCampoChave(String chave) {
+		// TODO Auto-generated method stub
+		return false;
 	}
-	public void removeFilme(Filme filme){
-		this.filmes.remove(filme);
+
+	@Override
+	public String retornaValorChave() {
+		// TODO Auto-generated method stub
+		return null;
 	}
-	
-	public List<String> listFilme(){
-		
-		List<String> listaDeFilmes = new ArrayList<String>();
-		
-		ListIterator<Filme> iterator = filmes.listIterator();
-		
-		while (iterator.hasNext()){
-			Filme tempFilme = iterator.next();
-			listaDeFilmes.add(tempFilme.getNome());
-		}
-		
-		return listaDeFilmes;
+
+	@Override
+	public void setIndice(int indice) {
+		// TODO Auto-generated method stub
 		
 	}
-	
+
+	@Override
+	public int getIndice() {
+		// TODO Auto-generated method stub
+		return 0;
+	}	
 	
 }
