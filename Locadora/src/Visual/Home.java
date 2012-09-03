@@ -1,8 +1,10 @@
 package Visual;
 import javax.swing.*;
+
+import Banco.RegistroInexistente;
+
 import java.awt.*;
 import java.awt.event.*;
-import java.util.ListIterator;
 
 public class Home {
 
@@ -41,7 +43,7 @@ public class Home {
 		menuClienteRemover.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
 				
-				double codigoClienteRemovido = 0;
+				int codigoClienteRemovido = 0;
 				
 				String validaDado =JOptionPane.showInputDialog("Favor informar o código do cliente que deseja remover:");
 				
@@ -50,13 +52,18 @@ public class Home {
 				}
 				else
 				{
-					codigoClienteRemovido =Double.parseDouble(validaDado);
-					if (JOptionPane.showConfirmDialog(null, "Deseja realmente remover o cliente número: "+codigoClienteRemovido+"?") == 0){
-						Run.Main.removerCliente(codigoClienteRemovido);
-					}
-					else
-					{
-						JOptionPane.showMessageDialog(null,"Operação Cancelada.");
+					codigoClienteRemovido =Integer.parseInt(validaDado);
+					try {
+						if (JOptionPane.showConfirmDialog(null, "Deseja realmente remover o cliente número: "+codigoClienteRemovido+"?") == 0){
+							Run.Main.banco.ExcluiCliente(codigoClienteRemovido);
+						}
+						else
+						{
+							JOptionPane.showMessageDialog(null,"Operação Cancelada.");
+						}
+					} catch (RegistroInexistente e) {
+						JOptionPane.showMessageDialog(null,e.getMessage(),"Valor não esperado",JOptionPane.ERROR_MESSAGE);
+						e.printStackTrace();
 					}
 				}
 			}
