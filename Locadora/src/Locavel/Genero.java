@@ -1,9 +1,9 @@
 package Locavel;
 
-import Banco.Tabulavel;
+import Banco.Tabelavel;
 
 
-public class Genero implements  Tabulavel {
+public class Genero implements  Tabelavel {
 
 	private String nome;
 	private String descricao;
