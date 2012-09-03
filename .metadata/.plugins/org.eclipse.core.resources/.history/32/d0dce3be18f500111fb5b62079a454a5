@@ -1,6 +1,0 @@
-package Banco;
-
-public enum Entities {
-
-	MIDIA, CLIENTES;
-}
