@@ -8,16 +8,17 @@ import java.util.Map;
 import java.util.Set;
 
 import Locavel.Midia;
+import Locavel.Genero;
 import RecursosHumanos.Cliente;
 
 public class Banco {
 	
 	/*
-	 * Declaração das listas do Banco 
+	 * Declaraï¿½ï¿½o das listas do Banco 
 	 */
 	ArrayList<Midia> midia = new ArrayList<Midia>();
 	ArrayList<Cliente> cliente = new ArrayList<Cliente>();
-	
+	ArrayList<Genero> genero = new ArrayList<Genero>();	
 	Map midias = new HashMap();
 	Map clientes = new HashMap();
 	
@@ -157,7 +158,7 @@ public class Banco {
 	}
 
 	/*
-	 * Classe para manipulação de Midia
+	 * Classe para manipulaï¿½ï¿½o de Midia
 	 */
 	
     public void Insere ( Midia midia ) throws RegistroJaExiste{
@@ -205,8 +206,29 @@ public class Banco {
         return lista;
     }
 	
+/* Genero
+ * 
+ */
+	
+    public void Insere ( Genero genero ) throws RegistroJaExiste{
+		insereNaLista( (ArrayList) this.genero, (Tabelavel) genero);
+	}
+    public void ExcluiGenero ( String chave ) throws RegistroInexistente{
+		removeDaLista( (ArrayList) this.genero, chave);
+	}
+	public Genero ConsultaGenero ( String chave ) throws RegistroInexistente{
+		return (Genero) consultaDaLista( (ArrayList) this.genero, chave);
+	}
+
+	public void AlteraGenero ( Genero genero) throws RegistroInexistente, RegistroJaExiste{
+		alteraNaLista( (ArrayList) this.genero, (Tabelavel) genero);
+	}
+
+	
+// Fim Genero
+	
 	/*
-	 * Classe para manipulação de Cliente
+	 * Classe para manipulaï¿½ï¿½o de Cliente
 	 */
 	
     public void Insere ( Cliente cliente ) throws RegistroJaExiste{
@@ -254,6 +276,27 @@ public class Banco {
         
         return lista;
     }
+
+    public void showGenero ( ) {
+		
+		Genero registro;
+		
+		for (int i = 0; i < genero.size(); i++) {
+			
+			registro = genero.get(i);
+			
+			if ( registro != null ) {
+							
+				System.out.println( "Genero " + registro.getIndice() +
+									" cï¿½digo " + registro.getCodigo()  +
+									" e descriï¿½ï¿½o " + registro.getDescricao() + ".");
+			
+			}
+			
+		}
+		
+	}
+
 	
 	public void showMidia ( ) {
 		
@@ -265,16 +308,16 @@ public class Banco {
 			
 			if ( registro != null ) {
 							
-				System.out.println( "Mídia " + registro.getIndice() +
-									" código " + registro.getCodigo() +
-									" e descrição " + registro.getDescricao() + ".");
+				System.out.println( "Mï¿½dia " + registro.getIndice() +
+									" cï¿½digo " + registro.getCodigo() +
+									" e descriï¿½ï¿½o " + registro.getDescricao() + ".");
 			
 			}
 			
 		}
 		
 	}
-	/*
+	/*	
 	public static void main(String[] args) {
 		//criacao banco
 		Map banco = new HashMap();

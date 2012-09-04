@@ -19,7 +19,7 @@ public class Main {
 		SimpleDateFormat FormatDate = new SimpleDateFormat("dd/MM/yyyy");
 		
 		RecursosHumanos.Cliente bruno = new RecursosHumanos.Cliente("Bruno Schionato", "1111111","Saudade",1242, "Centro", "Cosmopolis", "schionato@gmail.com", FormatDate.parse("22/09/1987"));
-		RecursosHumanos.Cliente aldair = new RecursosHumanos.Cliente("Aldair Roberto", "2331111","Paulisa",2356, "Centro", "São Paulo", "aldair@gmail.com", FormatDate.parse("01/05/1980"));
+		RecursosHumanos.Cliente aldair = new RecursosHumanos.Cliente("Aldair Roberto", "2331111","Paulisa",2356, "Centro", "Sï¿½o Paulo", "aldair@gmail.com", FormatDate.parse("01/05/1980"));
 		RecursosHumanos.Cliente juliana = new RecursosHumanos.Cliente("Juliana Aparecida", "233567","7 de Setembro",9856, "Bela Vista", "Holambra", "juliana@ms.com", FormatDate.parse("28/05/1981"));
 		
 		try {
@@ -36,3 +36,4 @@ public class Main {
 	}
 
 }
+

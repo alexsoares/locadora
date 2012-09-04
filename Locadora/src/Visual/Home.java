@@ -45,24 +45,24 @@ public class Home {
 				
 				int codigoClienteRemovido = 0;
 				
-				String validaDado =JOptionPane.showInputDialog("Favor informar o código do cliente que deseja remover:");
+				String validaDado =JOptionPane.showInputDialog("Favor informar o cï¿½digo do cliente que deseja remover:");
 				
 				if(validaDado ==null){
-					JOptionPane.showMessageDialog(null,"Operação Cancelada.");
+					JOptionPane.showMessageDialog(null,"Operaï¿½ï¿½o Cancelada.");
 				}
 				else
 				{
 					codigoClienteRemovido =Integer.parseInt(validaDado);
 					try {
-						if (JOptionPane.showConfirmDialog(null, "Deseja realmente remover o cliente número: "+codigoClienteRemovido+"?") == 0){
+						if (JOptionPane.showConfirmDialog(null, "Deseja realmente remover o cliente nï¿½mero: "+codigoClienteRemovido+"?") == 0){
 							Run.Main.banco.ExcluiCliente(codigoClienteRemovido);
 						}
 						else
 						{
-							JOptionPane.showMessageDialog(null,"Operação Cancelada.");
+							JOptionPane.showMessageDialog(null,"Operaï¿½ï¿½o Cancelada.");
 						}
 					} catch (RegistroInexistente e) {
-						JOptionPane.showMessageDialog(null,e.getMessage(),"Valor não esperado",JOptionPane.ERROR_MESSAGE);
+						JOptionPane.showMessageDialog(null,e.getMessage(),"Valor nï¿½o esperado",JOptionPane.ERROR_MESSAGE);
 						e.printStackTrace();
 					}
 				}
@@ -124,8 +124,4 @@ public class Home {
 		frameHome.setResizable(false);
 	}
 }
-		
-		
-		
-		
-		
+

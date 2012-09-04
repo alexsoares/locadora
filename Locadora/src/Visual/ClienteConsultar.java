@@ -37,7 +37,7 @@ public class ClienteConsultar{
 	@SuppressWarnings("serial")
 	public void CriaTabela() {
 		
-		String[] columns = new String[]{"Código","Nome","CPF","Rua","Número","Bairro","Cidade","E-mail","Data Nascimento"};
+		String[] columns = new String[]{"Cï¿½digo","Nome","CPF","Rua","Nï¿½mero","Bairro","Cidade","E-mail","Data Nascimento"};
 		
 		modelo = new DefaultTableModel(null,columns);
 		tbClientes = new JTable(modelo)
@@ -87,3 +87,4 @@ public class ClienteConsultar{
 		frameClienteConsultar.setBounds(100, 100, 800, 300);
 	}
 }
+
