@@ -1,3 +1,6 @@
+
+/*
+
 package Run;
 
 import java.util.ArrayList;
@@ -6,9 +9,6 @@ import java.util.ArrayList;
 import Banco.*;
 import Locavel.Midia;
 import Locavel.Genero;
-
-public class Teste {
-
 	public static void main(String[] args) throws RegistroInexistente {
 		
 		Banco banco = new Banco();
@@ -44,7 +44,6 @@ public class Teste {
 			System.out.println("(8.0)  Midia j� existe.");
 		}
 		
-	/*	
 		Midia midia1 = new Midia("1", "Midia 1");
 		Midia midia2 = new Midia("2", "Midia 2");
 		Midia midia3 = new Midia("3", "Midia 3");
@@ -123,6 +122,3 @@ public class Teste {
 		
 		System.out.println("(100) FIM");
 */		
-	}
-	
-}

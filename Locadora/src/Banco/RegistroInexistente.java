@@ -1,5 +1,6 @@
 package Banco;
 
+@SuppressWarnings("serial")
 public class RegistroInexistente extends Exception {
 
 	public RegistroInexistente(String chave) {

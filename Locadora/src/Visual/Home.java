@@ -55,7 +55,7 @@ public class Home {
 					codigoClienteRemovido =Integer.parseInt(validaDado);
 					try {
 						if (JOptionPane.showConfirmDialog(null, "Deseja realmente remover o cliente n�mero: "+codigoClienteRemovido+"?") == 0){
-							Run.Main.banco.ExcluiCliente(codigoClienteRemovido);
+							Run.Main.bancoCliente.Exclui(codigoClienteRemovido);
 						}
 						else
 						{

@@ -57,7 +57,7 @@ public class ClienteConsultar{
 
 	public void AdicionaLinhasTabela(){
 		
-		ListIterator<RecursosHumanos.Cliente> iterator = (ListIterator<Cliente>) Run.Main.banco.ListCliente().listIterator();
+		ListIterator<RecursosHumanos.Cliente> iterator = (ListIterator<Cliente>) Run.Main.bancoCliente.RetornaLinkedList().listIterator();
 
 		while (iterator.hasNext()){
 			RecursosHumanos.Cliente tempCliente = iterator.next();

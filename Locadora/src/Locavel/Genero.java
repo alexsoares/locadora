@@ -7,14 +7,12 @@ public class Genero implements  Tabelavel {
 
 	private String nome;
 	private String descricao;
-	private String codigo;
 	private int indice;
 	
 	
 	
-	public Genero(String codigo,String nome, String descricao){
+	public Genero(String nome, String descricao){
 		this.indice = -1;
-		this.codigo = codigo;
 		this.nome = nome;
 		this.descricao = descricao;
 
@@ -33,12 +31,12 @@ public class Genero implements  Tabelavel {
 		this.descricao = descricao;
 	}
 	public String getCodigo() {
-		return this.codigo;
+		return this.nome;
 	}
 
 	@Override
 	public boolean comparaCampoChave(String chave) {
-		if ( this.codigo.equals(chave) ) {
+		if ( this.nome.equals(chave) ) {
 			return true;
 		}
 		else {
@@ -48,7 +46,7 @@ public class Genero implements  Tabelavel {
 
 	
 	public String retornaValorChave() {
-		return this.codigo;
+		return this.nome;
 	}
 
 	

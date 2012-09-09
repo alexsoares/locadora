@@ -94,7 +94,7 @@ public class ClienteAtualizar {
 					try{
 						
 						LinkedList<Cliente> clientesEncontrados = new LinkedList<Cliente>();
-						clientesEncontrados.add(Run.Main.banco.ConsultaCliente(Integer.parseInt(criterioDaPesquisa)));
+						clientesEncontrados.add(Run.Main.bancoCliente.Consulta(Integer.parseInt(criterioDaPesquisa)));
 
 						ListIterator<RecursosHumanos.Cliente> iterator = clientesEncontrados.listIterator();
 						
@@ -148,7 +148,7 @@ public class ClienteAtualizar {
 					try{
 						
 						LinkedList<RecursosHumanos.Cliente> clientesEncontrados = new LinkedList<RecursosHumanos.Cliente>();
-						clientesEncontrados.add(Run.Main.banco.ConsultaCliente(criterioDaPesquisa));
+						clientesEncontrados.add(Run.Main.bancoCliente.Consulta(criterioDaPesquisa));
 						
 						ListIterator<RecursosHumanos.Cliente> iterator = clientesEncontrados.listIterator();
 						
@@ -211,7 +211,7 @@ public class ClienteAtualizar {
 					
 					clienteAtualizar.setCodigoCliente(Integer.parseInt(tabelaClientesAtualizar.getValueAt(0, 0).toString()));
 					
-					Run.Main.banco.Altera(clienteAtualizar);
+					Run.Main.bancoCliente.Altera(clienteAtualizar);
 				} catch (NumberFormatException e1) {
 					JOptionPane.showMessageDialog(null, e1);
 				} catch (ParseException e1) {
