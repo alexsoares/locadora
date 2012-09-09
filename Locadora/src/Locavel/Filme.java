@@ -2,26 +2,19 @@ package Locavel;
 
 import java.util.Date;
 
-public class Filme extends Produto {
+public class Filme extends Produto{
 	
 	private Date dataLancamento;
 	private int faixaEtaria;
 	private String sinopse;
 	private Genero genero;
-	private int quantidadeDisponivel;
-	private int quantidadeLocada;
-	private Boolean disponivel;
-
 	
-	public Filme(String nome, Double preco, int quantidade,Date dataLancamento, int faixaEtaria, String sinopse, Genero genero, int quantidadeDisponivel, int quantidadeLocada,Boolean disponivel) {
-		super(nome, preco, quantidade);
+	public Filme(String nome, Double preco, Date dataLancamento, int faixaEtaria, String sinopse, Genero genero) {
+		super(nome, preco);
 		this.dataLancamento = dataLancamento;
 		this.faixaEtaria = faixaEtaria;
 		this.sinopse = sinopse;
 		this.genero = genero;
-		this.quantidadeDisponivel = quantidadeDisponivel;
-		this.quantidadeLocada = quantidadeLocada;
-		this.disponivel = disponivel;
 
 	}
 	
@@ -57,25 +50,4 @@ public class Filme extends Produto {
 		this.genero = genero;
 	}
 
-	public int getQuantidadeDisponivel() {
-		return quantidadeDisponivel;
-	}
-
-	public void setQuantidadeDisponivel(int quantidadeDisponivel) {
-		this.quantidadeDisponivel = quantidadeDisponivel;
-	}
-
-	public int getQuantidadeLocada() {
-		return quantidadeLocada;
-	}
-
-	public void setQuantidadeLocada(int quantidadeLocada) {
-		this.quantidadeLocada = quantidadeLocada;
-	}
-
-	public Boolean getDisponivel() {
-		return disponivel;
-	}
-
-	
 }

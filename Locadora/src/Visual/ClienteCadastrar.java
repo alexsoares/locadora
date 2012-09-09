@@ -213,7 +213,7 @@ public class ClienteCadastrar extends Home{
 						txEmail.getText(),
 						FormatDate.parse(txDataNascimento.getText()));
 				
-				Run.Main.banco.Insere(novoCliente);
+				Run.Main.bancoCliente.Insere(novoCliente);
 				
 				JOptionPane.showMessageDialog(null,"Cliente cadastrado com sucesso!");
 				LimparDadosDaTela();

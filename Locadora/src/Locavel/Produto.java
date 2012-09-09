@@ -1,34 +1,46 @@
 package Locavel;
 
-public abstract class Produto {
+import Banco.Tabelavel;
 
+public abstract class Produto implements Tabelavel {
+
+	private int indice;
 	private String nome;
 	private Double preco;
-	private int quantidade;
 	
-	public Produto(String nome,Double preco,int quantidade){
+	public Produto(String nome,Double preco){
+		this.indice = -1;
 		this.nome = nome;
 		this.preco = preco;
-		this.quantidade = quantidade;
 	}
 	
 	public String getNome() {
 		return nome;
 	}
-	public void setNome(String nome) {
-		this.nome = nome;
-	}
+	
 	public Double getPreco() {
 		return preco;
 	}
-	public void setPreco(Double preco) {
-		this.preco = preco;
+
+	public boolean comparaCampoChave(String chave) {
+		if ( this.nome.equals(chave) ) {
+			return true;
+		}
+		else {
+			return false;
+		}
 	}
-	public int getQuantidade() {
-		return quantidade;
+
+	public String retornaValorChave() {
+		return this.nome;
 	}
-	public void setQuantidade(int quantidade) {
-		this.quantidade = quantidade;
+
+	public void setIndice(int indice) {
+		this.indice = indice;
+	}
+
+	public int getIndice() {
+		return this.indice;
 	}
 	
 	
