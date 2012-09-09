@@ -44,7 +44,7 @@ public class GeneroCadastrar extends Home{
 		lbNomeGenero.setBounds(90, 90, 59, 14);
 		frameGeneroCadastrar.getContentPane().add(lbNomeGenero);
 		
-		JLabel lblDescricao = new JLabel("DescriÁ„o:");
+		JLabel lblDescricao = new JLabel("Descri√ß√£o:");
 		lblDescricao.setForeground(new Color(255, 255, 255));
 		lblDescricao.setBounds(90, 149, 83, 21);
 		frameGeneroCadastrar.getContentPane().add(lblDescricao);
@@ -105,10 +105,10 @@ public class GeneroCadastrar extends Home{
 				LimparDadosDaTela();
 				
 			} catch (NumberFormatException e) {
-				JOptionPane.showMessageDialog(null,e.getMessage(),"Valor n„o esperado",JOptionPane.ERROR_MESSAGE);
+				JOptionPane.showMessageDialog(null,e.getMessage(),"Valor n√£o esperado",JOptionPane.ERROR_MESSAGE);
 				e.printStackTrace();
 			} catch (RegistroJaExiste e) {
-				JOptionPane.showMessageDialog(null,e.getMessage(),"Valor n„o esperado",JOptionPane.WARNING_MESSAGE);
+				JOptionPane.showMessageDialog(null,e.getMessage(),"Valor n√£o esperado",JOptionPane.WARNING_MESSAGE);
 				e.printStackTrace();
 			}
 		}
