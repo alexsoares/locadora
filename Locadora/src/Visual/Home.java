@@ -30,7 +30,7 @@ public class Home {
 		JMenuItem menuFilmesConsultar = new JMenuItem("Consultar");
 		JMenuItem menuFilmesRemover = new JMenuItem("Remover");
 		JMenuItem menuFilmesAtualizar = new JMenuItem("Atualizar");
-		JMenu menoGenero = new JMenu("G\u00EAnero");
+		JMenu menuGenero = new JMenu("Genero");
 		JMenuItem menuGeneroCadastrar = new JMenuItem("Cadastrar");
 		JMenuItem menuGeneroConsultar = new JMenuItem("Consultar");
 		JMenuItem menuGeneroRemover = new JMenuItem("Remover");
@@ -82,11 +82,11 @@ public class Home {
 		menuFilmes.add(menuFilmesConsultar);
 		menuFilmes.add(menuFilmesRemover);
 		menuFilmes.add(menuFilmesAtualizar);
-		menuBar.add(menoGenero);
-		menoGenero.add(menuGeneroCadastrar);
-		menoGenero.add(menuGeneroConsultar);
-		menoGenero.add(menuGeneroRemover);
-		menoGenero.add(menuGeneroAtualizar);
+		menuBar.add(menuGenero);
+		menuGenero.add(menuGeneroCadastrar);
+		menuGenero.add(menuGeneroConsultar);
+		menuGenero.add(menuGeneroRemover);
+		menuGenero.add(menuGeneroAtualizar);
 		menuBar.add(menuCliente);
 		menuCliente.add(menuClienteCadastrar);
 		menuCliente.add(menuClienteConsultar);
@@ -96,6 +96,13 @@ public class Home {
 		menuFilmesCadastrar.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
 				FilmeCadastrar cadastrarFilme = new FilmeCadastrar();
+				frameHome.setVisible(false);			
+			}
+		});
+		
+		menuGeneroCadastrar.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent arg0) {
+				GeneroCadastrar cadastrarGenero = new GeneroCadastrar();
 				frameHome.setVisible(false);			
 			}
 		});
