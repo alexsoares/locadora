@@ -30,7 +30,7 @@ public class GeneroCadastrar extends Home{
 		
 		frameGeneroCadastrar = new JFrame();
 		frameGeneroCadastrar = getFramePadrao();
-		frameGeneroCadastrar.setTitle("Locadora Unisal - Cadastrar Novo Cliente");
+		frameGeneroCadastrar.setTitle("Locadora Unisal - Cadastrar Novo Genero");
 		frameGeneroCadastrar.setBounds(100, 100, 450, 300);
 		frameGeneroCadastrar.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		frameGeneroCadastrar.setVisible(true);
@@ -44,7 +44,7 @@ public class GeneroCadastrar extends Home{
 		lbNomeGenero.setBounds(90, 90, 59, 14);
 		frameGeneroCadastrar.getContentPane().add(lbNomeGenero);
 		
-		JLabel lblDescricao = new JLabel("Descrição:");
+		JLabel lblDescricao = new JLabel("Descricao:");
 		lblDescricao.setForeground(new Color(255, 255, 255));
 		lblDescricao.setBounds(90, 149, 83, 21);
 		frameGeneroCadastrar.getContentPane().add(lblDescricao);

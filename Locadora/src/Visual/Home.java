@@ -1,18 +1,138 @@
 package Visual;
-import javax.swing.*;
+
+import java.awt.Color;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+import javax.swing.JFrame;
+import javax.swing.JMenu;
+import javax.swing.JMenuBar;
+import javax.swing.JMenuItem;
+import javax.swing.JOptionPane;
 
 import Banco.RegistroInexistente;
 
-import java.awt.*;
-import java.awt.event.*;
-
 public class Home {
+	
+	private JFrame 	 frameHome;
 
-	private JFrame frameHome;
-
+	private JMenuBar menuBar(){
+		JMenuBar menuBar = new JMenuBar();
+		menuBar.setBounds(0, 0, 450, 21);
+		menuBar.add(menuFilmes());
+		menuBar.add(menuGenero());
+		menuBar.add(menuCliente());
+		return menuBar;		
+	}
+	
+	private JMenuItem instanciaItemDoMenuFilme(String nomeDoItem){
+		JMenuItem  itemDoMenu = new JMenuItem(nomeDoItem);
+		itemDoMenu.addActionListener(new ActionListener(){
+			@SuppressWarnings("unused")
+			public void actionPerformed(ActionEvent e){
+				if(e.getActionCommand().equals("Cadastrar")){
+					FilmeCadastrar cadastrarNovoFilme = new FilmeCadastrar();
+				}
+			}
+		});
+		return itemDoMenu;
+	}
+	
+	private JMenuItem instanciaItemDoMenuCliente(String nomeDoItem){
+		JMenuItem  itemDoMenu = new JMenuItem(nomeDoItem);
+		itemDoMenu.addActionListener(new ActionListener(){
+			@SuppressWarnings("unused")
+			public void actionPerformed(ActionEvent e){
+				
+				if (e.getActionCommand().equals("Cadastrar")){
+					ClienteCadastrar cadastrarNovoCliente = new ClienteCadastrar();
+					frameHome.setVisible(false);
+				}
+				
+				if(e.getActionCommand().equals("Consultar")){
+					ClienteConsultar consultarCliente = new ClienteConsultar();
+				}
+				
+				if(e.getActionCommand().equals("Atualizar")){
+					ClienteAtualizar atualizarCliente = new ClienteAtualizar();
+				}
+				
+				if(e.getActionCommand().equals("Remover")){
+					int codigoClienteRemovido = 0;
+					
+					String validaDado =JOptionPane.showInputDialog("Favor informar o codigo do cliente que deseja remover:");
+					
+					if(validaDado ==null){
+						JOptionPane.showMessageDialog(null,"Operacao Cancelada.");
+					}
+					else
+					{
+						codigoClienteRemovido =Integer.parseInt(validaDado);
+						try {
+							if (JOptionPane.showConfirmDialog(null, "Deseja realmente remover o cliente numero: "+codigoClienteRemovido+"?") == 0){
+								Run.Main.bancoCliente.Exclui(codigoClienteRemovido);
+							}
+							else
+							{
+								JOptionPane.showMessageDialog(null,"Operacao Cancelada.");
+							}
+						} catch (RegistroInexistente e1) {
+							JOptionPane.showMessageDialog(null,e1.getMessage(),"Valor nao esperado",JOptionPane.ERROR_MESSAGE);
+							e1.printStackTrace();
+						}
+					}
+				}
+			}
+		});
+		return itemDoMenu;
+	}
+	
+	private JMenuItem instanciaItemDoMenuGenero(String nomeDoItem){
+		JMenuItem  itemDoMenu = new JMenuItem(nomeDoItem);
+		itemDoMenu.addActionListener(new ActionListener(){
+			@SuppressWarnings("unused")
+			public void actionPerformed(ActionEvent e){
+				if(e.getActionCommand().equals("Cadastrar")){
+					GeneroCadastrar cadastrarNovoGenero = new GeneroCadastrar();
+					frameHome.setVisible(false);
+				}
+			}
+		});
+		return itemDoMenu;
+	}
+	
+	private JMenu menuCliente(){
+		JMenu menuCliente = new JMenu("Cliente");
+		menuCliente.add(instanciaItemDoMenuCliente("Cadastrar"));
+		menuCliente.add(instanciaItemDoMenuCliente("Consultar"));
+		menuCliente.add(instanciaItemDoMenuCliente("Remover"));
+		menuCliente.add(instanciaItemDoMenuCliente("Atualizar"));
+		return menuCliente;
+	}
+	
+	private JMenu menuGenero(){
+		JMenu menuGenero = new JMenu("Genero");
+		menuGenero.add(instanciaItemDoMenuGenero("Cadastrar"));
+		menuGenero.add(instanciaItemDoMenuGenero("Consultar"));
+		menuGenero.add(instanciaItemDoMenuGenero("Remover"));
+		menuGenero.add(instanciaItemDoMenuGenero("Atualizar"));
+		return menuGenero;
+		
+	}
+	
+	private JMenu menuFilmes(){
+		JMenu menuFilmes = new JMenu("Filmes");
+		menuFilmes.add(instanciaItemDoMenuFilme("Cadastrar"));
+		menuFilmes.add(instanciaItemDoMenuFilme("Consultar"));
+		menuFilmes.add(instanciaItemDoMenuFilme("Remover"));
+		menuFilmes.add(instanciaItemDoMenuFilme("Atualizar"));
+		return menuFilmes;
+	}
+	
+	
+	
 	public Home() {
 		frameHome();
-		menuBar();
+		frameHome.getContentPane().add(menuBar());
 		frameHome.setVisible(true);
 	}
 
@@ -20,115 +140,14 @@ public class Home {
 		return this.frameHome;
 	}
 	
-	private void menuBar() {
-		JMenuBar menuBar = new JMenuBar();
-		menuBar.setBounds(0, 0, 450, 21);
-		frameHome.getContentPane().add(menuBar);
-		
-		JMenu menuFilmes = new JMenu("Filmes");
-		JMenuItem menuFilmesCadastrar = new JMenuItem("Cadastrar");
-		JMenuItem menuFilmesConsultar = new JMenuItem("Consultar");
-		JMenuItem menuFilmesRemover = new JMenuItem("Remover");
-		JMenuItem menuFilmesAtualizar = new JMenuItem("Atualizar");
-		JMenu menuGenero = new JMenu("Genero");
-		JMenuItem menuGeneroCadastrar = new JMenuItem("Cadastrar");
-		JMenuItem menuGeneroConsultar = new JMenuItem("Consultar");
-		JMenuItem menuGeneroRemover = new JMenuItem("Remover");
-		JMenuItem menuGeneroAtualizar = new JMenuItem("Atualizar");
-		JMenu menuCliente = new JMenu("Cliente");
-		JMenuItem menuClienteCadastrar = new JMenuItem("Cadastrar");
-		JMenuItem menuClienteConsultar = new JMenuItem("Consultar");
-		JMenuItem menuClienteRemover = new JMenuItem("Remover");
-		
-		menuClienteRemover.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent arg0) {
-				
-				int codigoClienteRemovido = 0;
-				
-				String validaDado =JOptionPane.showInputDialog("Favor informar o c�digo do cliente que deseja remover:");
-				
-				if(validaDado ==null){
-					JOptionPane.showMessageDialog(null,"Opera��o Cancelada.");
-				}
-				else
-				{
-					codigoClienteRemovido =Integer.parseInt(validaDado);
-					try {
-						if (JOptionPane.showConfirmDialog(null, "Deseja realmente remover o cliente n�mero: "+codigoClienteRemovido+"?") == 0){
-							Run.Main.bancoCliente.Exclui(codigoClienteRemovido);
-						}
-						else
-						{
-							JOptionPane.showMessageDialog(null,"Opera��o Cancelada.");
-						}
-					} catch (RegistroInexistente e) {
-						JOptionPane.showMessageDialog(null,e.getMessage(),"Valor n�o esperado",JOptionPane.ERROR_MESSAGE);
-						e.printStackTrace();
-					}
-				}
-			}
-		});
-		JMenuItem menuClienteAtualizar = new JMenuItem("Atualizar");
-		menuClienteAtualizar.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent e) {
-				
-				ClienteAtualizar atualizarCliente = new ClienteAtualizar();
-				
-			}
-		});
-		
-		menuBar.add(menuFilmes);
-		menuFilmes.add(menuFilmesCadastrar);
-		menuFilmes.add(menuFilmesConsultar);
-		menuFilmes.add(menuFilmesRemover);
-		menuFilmes.add(menuFilmesAtualizar);
-		menuBar.add(menuGenero);
-		menuGenero.add(menuGeneroCadastrar);
-		menuGenero.add(menuGeneroConsultar);
-		menuGenero.add(menuGeneroRemover);
-		menuGenero.add(menuGeneroAtualizar);
-		menuBar.add(menuCliente);
-		menuCliente.add(menuClienteCadastrar);
-		menuCliente.add(menuClienteConsultar);
-		menuCliente.add(menuClienteRemover);
-		menuCliente.add(menuClienteAtualizar);
-		
-		menuFilmesCadastrar.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent arg0) {
-				FilmeCadastrar cadastrarFilme = new FilmeCadastrar();
-				frameHome.setVisible(false);			
-			}
-		});
-		
-		menuGeneroCadastrar.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent arg0) {
-				GeneroCadastrar cadastrarGenero = new GeneroCadastrar();
-				frameHome.setVisible(false);			
-			}
-		});
-		
-		menuClienteCadastrar.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent arg0) {
-				ClienteCadastrar cadastrarNovoCliente = new ClienteCadastrar();
-				frameHome.setVisible(false);
-			}			
-		});
-		
-		menuClienteConsultar.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent e) {
-				ClienteConsultar consultarCliente = new ClienteConsultar();
-			}
-		});
-	}
-	
 	private void frameHome() {
 		frameHome = new JFrame();
 		frameHome.getContentPane().setBackground(new Color(105, 105, 105));
 		frameHome.getContentPane().setLayout(null);
-		frameHome.setTitle("Locadora Unisal - Home");
+		frameHome.setTitle("Locadora Unisal - Bem vindo");
 		frameHome.setBounds(100, 100, 450, 300);
 		frameHome.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		frameHome.setResizable(false);
 	}
-}
 
+}

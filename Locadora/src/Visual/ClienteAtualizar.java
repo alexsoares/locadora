@@ -2,7 +2,6 @@ package Visual;
 
 import java.awt.BorderLayout;
 import java.awt.Color;
-import java.awt.List;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.LinkedList;
@@ -15,11 +14,9 @@ import java.awt.SystemColor;
 import javax.swing.JMenuBar;
 import javax.swing.JMenu;
 import javax.swing.JMenuItem;
-
 import Banco.RegistroInexistente;
 import Banco.RegistroJaExiste;
 import RecursosHumanos.Cliente;
-
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
 
@@ -82,12 +79,12 @@ public class ClienteAtualizar {
 	
 	private JMenuItem menuCodigoDoCliente(){
 		
-		JMenuItem mntmCdigoDoCliente = new JMenuItem("C\u00F3digo do Cliente");
+		JMenuItem mntmCdigoDoCliente = new JMenuItem("Codigo do Cliente");
 		mntmCdigoDoCliente.addActionListener(new ActionListener() {
 			
 			public void actionPerformed(ActionEvent e) {
 				
-				String criterioDaPesquisa = CapturarCriterioPesquista("Código do Cliente").toString();
+				String criterioDaPesquisa = CapturarCriterioPesquista("Codigo do Cliente").toString();
 			
 				if (criterioDaPesquisa != null){
 					

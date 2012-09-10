@@ -37,7 +37,7 @@ public class ClienteConsultar{
 	@SuppressWarnings("serial")
 	public void CriaTabela() {
 		
-		String[] columns = new String[]{"C�digo","Nome","CPF","Rua","N�mero","Bairro","Cidade","E-mail","Data Nascimento"};
+		String[] columns = new String[]{"Codigo","Nome","CPF","Rua","N�mero","Bairro","Cidade","E-mail","Data Nascimento"};
 		
 		modelo = new DefaultTableModel(null,columns);
 		tbClientes = new JTable(modelo)
