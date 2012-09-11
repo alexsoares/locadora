@@ -5,6 +5,7 @@ import Banco.Tabelavel;
 
 public class Genero implements  Tabelavel {
 
+	
 	private String nome;
 	private String descricao;
 	private int indice;
@@ -30,9 +31,7 @@ public class Genero implements  Tabelavel {
 	public void setDescricao(String descricao) {
 		this.descricao = descricao;
 	}
-	public String getCodigo() {
-		return this.nome;
-	}
+
 
 	@Override
 	public boolean comparaCampoChave(String chave) {

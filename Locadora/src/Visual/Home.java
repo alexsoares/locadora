@@ -95,6 +95,35 @@ public class Home {
 					GeneroCadastrar cadastrarNovoGenero = new GeneroCadastrar();
 					frameHome.setVisible(false);
 				}
+				if(e.getActionCommand().equals("Atualizar")){
+					GeneroAtualizar atualizarGenero = new GeneroAtualizar();
+				}
+				
+				if(e.getActionCommand().equals("Remover")){
+					int codigoGeneroRemovido = 0;
+					
+					String validaDado =JOptionPane.showInputDialog("Favor informar o codigo do genero que deseja remover:");
+					
+					if(validaDado ==null){
+						JOptionPane.showMessageDialog(null,"Operacao Cancelada.");
+					}
+					else
+					{
+						codigoGeneroRemovido =Integer.parseInt(validaDado);
+						try {
+							if (JOptionPane.showConfirmDialog(null, "Deseja realmente remover o genero numero: "+codigoGeneroRemovido+"?") == 0){
+								Run.Main.bancoGenero.Exclui(codigoGeneroRemovido);
+							}
+							else
+							{
+								JOptionPane.showMessageDialog(null,"Operacao Cancelada.");
+							}
+						} catch (RegistroInexistente e1) {
+							JOptionPane.showMessageDialog(null,e1.getMessage(),"Valor nao esperado",JOptionPane.ERROR_MESSAGE);
+							e1.printStackTrace();
+						}
+					}
+				}
 			}
 		});
 		return itemDoMenu;
