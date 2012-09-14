@@ -3,12 +3,15 @@ package Banco;
 import java.util.ArrayList;
 import java.util.LinkedList;
 
+
 import Locavel.Locacao;
+import RecursosHumanos.Cliente;
 
 public class BancoLocacao extends Banco {
 
 	ArrayList<Locacao> locacao = new ArrayList<Locacao>();
 	
+
     public void Insere ( Locacao locacao ) throws RegistroJaExiste{
 		insereNaLista( (ArrayList) this.locacao, (Tabelavel) locacao);
 	}
