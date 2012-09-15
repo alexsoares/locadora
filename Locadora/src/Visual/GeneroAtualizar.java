@@ -203,14 +203,15 @@ private JMenuItem menuSalvar(){
 		
 		public void actionPerformed(ActionEvent e) {
 	
+			
+			Locavel.Genero generoAtualizar =
+					new Locavel.Genero(
+					tabelaGenerosAtualizar.getValueAt(0, 1).toString(),//Nome
+					tabelaGenerosAtualizar.getValueAt(0,2).toString());//descricao
+			generoAtualizar.setIndice(Integer.parseInt(tabelaGenerosAtualizar.getValueAt(0, 0).toString()));
+			
 			try {
-				
-				Locavel.Genero generoAtualizar =	new Locavel.Genero(
-						tabelaGenerosAtualizar.getValueAt(0, 1).toString(),//Nome
-						tabelaGenerosAtualizar.getValueAt(0,2).toString());//descricao
-				
 				//generoAtualizar.setIndice(Integer.parseInt(tabelaGenerosAtualizar.getValueAt(0, 0).toString()));
-				
 				Run.Main.bancoGenero.Altera(generoAtualizar);
 			} catch (NumberFormatException e1) {
 				JOptionPane.showMessageDialog(null, e1);
@@ -223,7 +224,20 @@ private JMenuItem menuSalvar(){
 		}
 	);
 	return mntmSalvar;
-
+	
+	/*
+	 * 			Locavel.Genero generoAtualizar = null;
+			try {
+				generoAtualizar = Run.Main.bancoGenero.Consulta( Integer.parseInt(tabelaGenerosAtualizar.getValueAt(0, 0).toString()) );
+			} catch (NumberFormatException e2) {
+				JOptionPane.showMessageDialog(null, e2);
+			} catch (RegistroInexistente e2) {
+				JOptionPane.showMessageDialog(null, e2);
+			}
+			
+			generoAtualizar.setNome(tabelaGenerosAtualizar.getValueAt(0, 1).toString());
+			generoAtualizar.setDescricao(tabelaGenerosAtualizar.getValueAt(0, 2).toString());
+			*/
 }
 
 private JMenuItem menuSair(){

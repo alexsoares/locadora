@@ -1,113 +1,154 @@
 package Visual;
 
-import java.awt.Color;
-import javax.swing.JLabel;
-import javax.swing.JTextField;
-import javax.swing.JComboBox;
-import javax.swing.JButton;
+import java.awt.BorderLayout;
+import java.awt.EventQueue;
 import java.awt.Font;
-import java.util.ListIterator;
 
-import javax.swing.SwingConstants;
+import javax.swing.JButton;
+import javax.swing.JComboBox;
+import javax.swing.JFrame;
+import javax.swing.JLabel;
+import javax.swing.JPanel;
+import javax.swing.JTextField;
+import javax.swing.border.EmptyBorder;
 
 import Locavel.Genero;
 
+import java.awt.event.ActionListener;
+import java.awt.event.ActionEvent;
+import java.util.ListIterator;
 
-public class FilmeCadastrar extends Home{
+public class FilmeCadastrar extends JFrame {
 
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
+	private JPanel contentPane;
+	private JTextField txDtFilme;
+	private JTextField txSinopseFilme;
+	private JTextField txFxFilme;
+	private JTextField txNomeFilme;
+	private JTextField txPrecoFilme;
+
+	
+	/**
+	 * Create the frame.
+	 */
 	public FilmeCadastrar() {
-		super.getFramePadrao().setTitle("Locadora Unisal - Cadastrar Novo Filme");
 		
-		initialize();
-	}
-	
-	private JLabel makeNewLabel(String mensagem,int a,int b, int c, int d){
-		JLabel novoLabel = new JLabel(mensagem);
-		novoLabel.setForeground(new Color(255, 255, 255));
-		novoLabel.setBackground(new Color(255, 255, 255));
-		novoLabel.setBounds(a,b,c,d);
-		return novoLabel;
-	}
-	
-	private JLabel labelNomeFilme(){
-		JLabel lbNomeFilme = makeNewLabel("Nome:",90, 90, 59, 14);
-		return lbNomeFilme;
-	}
-
-	private JLabel labelGenero(){
-		JLabel lbGenero = makeNewLabel("Genero:",90, 124, 46, 14);
-		return lbGenero;
-	}
-	
-	private JLabel labelCadastrarFilme(){
-		JLabel lbCadastrarFilme = makeNewLabel("Cadastrar Filme",0, 46, 434, 21);
-		lbCadastrarFilme.setHorizontalAlignment(SwingConstants.CENTER);
-		lbCadastrarFilme.setFont(new Font("Calibri", Font.BOLD, 17));
-		return lbCadastrarFilme;
-	}
-	
-	private JLabel labelAnos(){
-		JLabel lblAnos = makeNewLabel("anos",246, 152, 46, 14);
-		return lblAnos;
-	}
-	
-	private JLabel labelFaixaEtaria(){
-		JLabel lblFaixaEtria = makeNewLabel("Faixa Etária:",90, 149, 83, 21);
-		return lblFaixaEtria;
-	}
-	
-	private JTextField textNomeFilme(){
-		JTextField txNomeFilme = new JTextField();
-		txNomeFilme.setBounds(177, 87, 187, 20);
-		return txNomeFilme;
-	}
-	
-	@SuppressWarnings("rawtypes")
-	private JComboBox comboGenero(){
-
-		JComboBox cbGenero = new JComboBox();
+		setBounds(100, 100, 450, 300);
+		contentPane = new JPanel();
+		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
+		setContentPane(contentPane);
+		
+		JComboBox<String> cbGeneroFilme = new JComboBox<String>();
 		ListIterator<Genero> iterator = (ListIterator<Genero>) Run.Main.bancoGenero.RetornaLinkedList().listIterator();
-		cbGenero.addItem("Selectione");
+		cbGeneroFilme.addItem("Selectione");
 		while (iterator.hasNext()){
 			Genero tempGenero = iterator.next();
-			cbGenero.addItem(tempGenero.getNome());     
+			cbGeneroFilme.addItem(tempGenero.getNome());     
 		}		
+		cbGeneroFilme.setBounds(128, 80, 108, 20);
 		
-		cbGenero.setBounds(177, 121, 187, 20);
-		return cbGenero;
-	}
-	
-	private JTextField textFaixaEtaria(){
-		JTextField txFaixaEtaria = new JTextField();
-		txFaixaEtaria.setBounds(177, 149, 59, 20);
-		return txFaixaEtaria;
-	}
+		JLabel lblGenero = new JLabel("Genero");
+		lblGenero.setBounds(27, 83, 35, 14);
 		
-	private JButton botaoCadastrar(){
-		JButton btCadastrar = new JButton("Cadastrar");
-		btCadastrar.setBounds(296, 217, 97, 23);
-		return btCadastrar;
-	}
+		JLabel lblDataLancamento = new JLabel("Data Lancamento");
+		lblDataLancamento.setBounds(27, 114, 102, 14);
+		
+		JLabel lblSinopse = new JLabel("Sinopse");
+		lblSinopse.setBounds(27, 145, 37, 14);
+		
+		txDtFilme = new JTextField();
+		txDtFilme.setBounds(136, 111, 86, 20);
+		txDtFilme.setColumns(10);
+		
+		txSinopseFilme = new JTextField();
+		txSinopseFilme.setBounds(136, 145, 288, 53);
+		txSinopseFilme.setColumns(10);
+		
+		JLabel lblFaixaEtaria = new JLabel("Faixa etaria");
+		lblFaixaEtaria.setBounds(254, 48, 84, 14);
+		
+		txFxFilme = new JTextField();
+		txFxFilme.setBounds(338, 52, 86, 20);
+		txFxFilme.setColumns(10);
 	
-	private JButton botaoCancelar(){
-		JButton btCancelar = new JButton("Cancelar");
-		btCancelar.setBounds(197, 217, 89, 23);
-		return btCancelar;
-	}
-	
-
-	private void initialize() {
+		
+		
+		JButton btnCadastrar = new JButton("Cadastrar");
+		btnCadastrar.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
 				
-		super.getFramePadrao().getContentPane().add(labelNomeFilme());
-		super.getFramePadrao().getContentPane().add(labelGenero());
-		super.getFramePadrao().getContentPane().add(labelCadastrarFilme());
-		super.getFramePadrao().getContentPane().add(labelAnos());
-		super.getFramePadrao().getContentPane().add(labelFaixaEtaria());
-		super.getFramePadrao().getContentPane().add(textNomeFilme());
-		super.getFramePadrao().getContentPane().add(comboGenero());
-		super.getFramePadrao().getContentPane().add(textFaixaEtaria());
-		super.getFramePadrao().getContentPane().add(botaoCadastrar());
-		super.getFramePadrao().getContentPane().add(botaoCancelar());
+			}
+		});
+		btnCadastrar.setBounds(331, 206, 93, 23);
+		
+		JButton btnCancelar = new JButton("Cancelar");
+		btnCancelar.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent arg0) {
+			}
+		});
+		btnCancelar.setBounds(117, 206, 108, 23);
+		
+		JLabel lblCadastroDeFilmes = new JLabel("Cadastro de Filmes");
+		lblCadastroDeFilmes.setBounds(260, 11, 164, 26);
+		lblCadastroDeFilmes.setFont(new Font("Arial Black", Font.PLAIN, 13));
+		contentPane.setLayout(null);
+		contentPane.add(btnCancelar);
+		contentPane.add(btnCadastrar);
+		contentPane.add(lblDataLancamento);
+		contentPane.add(lblGenero);
+		contentPane.add(lblSinopse);
+		contentPane.add(lblFaixaEtaria);
+		contentPane.add(lblCadastroDeFilmes);
+		contentPane.add(txSinopseFilme);
+		contentPane.add(cbGeneroFilme);
+		contentPane.add(txDtFilme);
+		contentPane.add(txFxFilme);
+		
+		JLabel lblNome = new JLabel("Nome");
+		lblNome.setBounds(27, 29, 46, 14);
+		contentPane.add(lblNome);
+		
+		JLabel lblPreo = new JLabel("Pre\u00E7o");
+		lblPreo.setBounds(27, 58, 46, 14);
+		contentPane.add(lblPreo);
+		
+		txNomeFilme = new JTextField();
+		txNomeFilme.setBounds(127, 26, 86, 20);
+		contentPane.add(txNomeFilme);
+		txNomeFilme.setColumns(10);
+		
+		txPrecoFilme = new JTextField();
+		txPrecoFilme.setBounds(127, 52, 86, 20);
+		contentPane.add(txPrecoFilme);
+		txPrecoFilme.setColumns(10);
 		
 	}
+	public void CadastrarNovoCliente(){
+		
+
+		
+		try {
+				Locavel.Cliente novoCliente = new Locavel.Filme(
+						txNome.getText());
+				
+				Run.Main.bancoCliente.Insere(novoCliente);
+				
+				JOptionPane.showMessageDialog(null,"Cliente cadastrado com sucesso!");
+				LimparDadosDaTela();
+				
+			} catch (NumberFormatException e) {
+				JOptionPane.showMessageDialog(null,e.getMessage(),"Valor não esperado",JOptionPane.ERROR_MESSAGE);
+				e.printStackTrace();
+			} catch (ParseException e) {
+				JOptionPane.showMessageDialog(null,e.getMessage(),"Valor não esperado",JOptionPane.WARNING_MESSAGE);
+				e.printStackTrace();
+			} catch (RegistroJaExiste e) {
+				JOptionPane.showMessageDialog(null,e.getMessage(),"Valor não esperado",JOptionPane.WARNING_MESSAGE);
+				e.printStackTrace();
+			}
+		}
 }
