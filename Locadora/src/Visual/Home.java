@@ -31,6 +31,7 @@ public class Home {
 			public void actionPerformed(ActionEvent e){
 				if(e.getActionCommand().equals("Cadastrar")){
 					FilmeCadastrar cadastrarNovoFilme = new FilmeCadastrar();
+					cadastrarNovoFilme.setVisible(true);
 				}
 			}
 		});
