@@ -6,13 +6,18 @@ import javax.swing.JTextField;
 import javax.swing.JComboBox;
 import javax.swing.JButton;
 import java.awt.Font;
+import java.util.ListIterator;
+
 import javax.swing.SwingConstants;
+
+import Locavel.Genero;
 
 
 public class FilmeCadastrar extends Home{
 
 	public FilmeCadastrar() {
 		super.getFramePadrao().setTitle("Locadora Unisal - Cadastrar Novo Filme");
+		
 		initialize();
 	}
 	
@@ -59,7 +64,15 @@ public class FilmeCadastrar extends Home{
 	
 	@SuppressWarnings("rawtypes")
 	private JComboBox comboGenero(){
+
 		JComboBox cbGenero = new JComboBox();
+		ListIterator<Genero> iterator = (ListIterator<Genero>) Run.Main.bancoGenero.RetornaLinkedList().listIterator();
+		cbGenero.addItem("Selectione");
+		while (iterator.hasNext()){
+			Genero tempGenero = iterator.next();
+			cbGenero.addItem(tempGenero.getNome());     
+		}		
+		
 		cbGenero.setBounds(177, 121, 187, 20);
 		return cbGenero;
 	}
@@ -82,6 +95,7 @@ public class FilmeCadastrar extends Home{
 		return btCancelar;
 	}
 	
+
 	private void initialize() {
 				
 		super.getFramePadrao().getContentPane().add(labelNomeFilme());
@@ -94,5 +108,6 @@ public class FilmeCadastrar extends Home{
 		super.getFramePadrao().getContentPane().add(textFaixaEtaria());
 		super.getFramePadrao().getContentPane().add(botaoCadastrar());
 		super.getFramePadrao().getContentPane().add(botaoCancelar());
+		
 	}
 }

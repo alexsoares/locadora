@@ -38,24 +38,27 @@ public class GeneroCadastrar extends Home{
 	private void initialize() {
 		frameGeneroCadastrar();
 		
+
 		JLabel lbNomeGenero = new JLabel("Nome:");
 		lbNomeGenero.setForeground(new Color(255, 255, 255));
 		lbNomeGenero.setBackground(new Color(255, 255, 255));
-		lbNomeGenero.setBounds(90, 90, 59, 14);
+		lbNomeGenero.setBounds(90, 110, 59, 14);
 		frameGeneroCadastrar.getContentPane().add(lbNomeGenero);
 		
 		JLabel lblDescricao = new JLabel("Descricao:");
 		lblDescricao.setForeground(new Color(255, 255, 255));
-		lblDescricao.setBounds(90, 149, 83, 21);
+		lblDescricao.setBounds(90, 132, 83, 21);
 		frameGeneroCadastrar.getContentPane().add(lblDescricao);
 		
+
+		
 		txNomeGenero = new JTextField();
-		txNomeGenero.setBounds(177, 87, 187, 20);
+		txNomeGenero.setBounds(157, 110, 187, 20);
 		frameGeneroCadastrar.getContentPane().add(txNomeGenero);
 		txNomeGenero.setColumns(10);
 		
 		txDescricao = new JTextField();
-		txDescricao.setBounds(177, 149, 59, 20);
+		txDescricao.setBounds(157, 132, 187, 20);
 		frameGeneroCadastrar.getContentPane().add(txDescricao);
 		txDescricao.setColumns(10);
 			
@@ -96,7 +99,8 @@ public class GeneroCadastrar extends Home{
 		
 		try {
 				Locavel.Genero novoGenero = new Locavel.Genero(
-						txNomeGenero.getText(),
+						
+	     				txNomeGenero.getText(),
 						txDescricao.getText());
 				
 				Run.Main.bancoGenero.Insere(novoGenero);
