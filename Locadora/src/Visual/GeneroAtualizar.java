@@ -21,6 +21,11 @@ import Locavel.Genero;
 import RecursosHumanos.Cliente;
 import javax.swing.JTextField;
 import javax.swing.JLabel;
+import javax.swing.JPanel;
+import javax.swing.UIManager;
+import javax.swing.JInternalFrame;
+import javax.swing.JDesktopPane;
+import javax.swing.BoxLayout;
 
 @SuppressWarnings("unused")
 public class GeneroAtualizar extends JFrame {
@@ -69,7 +74,7 @@ public class GeneroAtualizar extends JFrame {
 		}
 		String CriterioPesquisa = JOptionPane.showInputDialog(null, "Informe o " + criterio + " do genero que terá seus dados atualizados:");
 		return CriterioPesquisa;
-}
+    }
 
 
 
@@ -112,6 +117,8 @@ private void AdiconarTabelaAoFrame() {
 	txCodigo.setBounds(138, 26, 86, 20);
 	frame.getContentPane().add(txCodigo);
 	txCodigo.setColumns(10);
+	
+
 	
 }
 
@@ -289,7 +296,7 @@ private void jFrame() {
 	
 	frame = new JFrame();
 	frame.setResizable(false);
-	frame.setBounds(100, 100, 800, 460);
+	frame.setBounds(100, 100, 433, 182);
 	frame.setDefaultCloseOperation(JFrame.HIDE_ON_CLOSE);
 	frame.setTitle("Locadora Unisal - Atualizar Cadastro");
 	frame.setVisible(true);
