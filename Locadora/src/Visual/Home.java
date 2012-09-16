@@ -10,6 +10,7 @@ import javax.swing.JMenuItem;
 import javax.swing.JOptionPane;
 
 import Banco.RegistroInexistente;
+import Locavel.Genero;
 
 public class Home {
 	
@@ -99,18 +100,30 @@ public class Home {
 				if(e.getActionCommand().equals("Atualizar")){
 					GeneroAtualizar atualizarGenero = new GeneroAtualizar();
 				}
+				if(e.getActionCommand().equals("Consultar")){
+					GeneroConsultar consultarGenero = new GeneroConsultar();
+					consultarGenero.setVisible(true);
+				}
 				
 				if(e.getActionCommand().equals("Remover")){
 					int codigoGeneroRemovido = 0;
 					
-					String validaDado =JOptionPane.showInputDialog("Favor informar o codigo do genero que deseja remover:");
-					
+					//String validaDado =JOptionPane.showInputDialog("Favor informar o codigo do genero que deseja remover:");
+					String validaDado = CapturarCriterioPesquista("Descrição").toString();
 					if(validaDado ==null){
 						JOptionPane.showMessageDialog(null,"Operacao Cancelada.");
 					}
 					else
 					{
-						codigoGeneroRemovido =Integer.parseInt(validaDado);
+						try {
+							Genero generoEncontrado = Run.Main.bancoGenero.Consulta((validaDado));
+							codigoGeneroRemovido = generoEncontrado.getIndice();
+							
+						} catch (RegistroInexistente e2) {
+							// TODO Auto-generated catch block
+							e2.printStackTrace();
+						}
+						
 						try {
 							if (JOptionPane.showConfirmDialog(null, "Deseja realmente remover o genero numero: "+codigoGeneroRemovido+"?") == 0){
 								Run.Main.bancoGenero.Exclui(codigoGeneroRemovido);
@@ -165,6 +178,10 @@ public class Home {
 		frameHome.getContentPane().add(menuBar());
 		frameHome.setVisible(true);
 	}
+	public String CapturarCriterioPesquista(String criterio){
+		String CriterioPesquisa = JOptionPane.showInputDialog(null, "Informe a " + criterio + " do genero que terá seus dados excluídos:");
+		return CriterioPesquisa;
+}
 
 	public JFrame getFramePadrao(){
 		return this.frameHome;
