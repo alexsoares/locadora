@@ -36,7 +36,6 @@ public class GeneroAtualizar extends JFrame {
 	 */
 	private static final long serialVersionUID = 1L;
 	private JFrame frame;
-	private DefaultTableModel modeloDaTabela;
 	private JMenuBar menuBar = new JMenuBar();
 	private JTextField txNomeGenero;
 	private JTextField txDescricaoGenero;
@@ -64,14 +63,10 @@ public class GeneroAtualizar extends JFrame {
 	public GeneroAtualizar() {
 		jFrame();
 		adicionarMenuAoFrame();
-		CriaTabela();
-		AdiconarTabelaAoFrame();
+		AdiconarConteudoAoFrame();
 	}
 	public String CapturarCriterioPesquista(String criterio){
 		
-		if (modeloDaTabela.getRowCount() > 0){
-			modeloDaTabela.removeRow(0);
-		}
 		String CriterioPesquisa = JOptionPane.showInputDialog(null, "Informe o " + criterio + " do genero que terá seus dados atualizados:");
 		return CriterioPesquisa;
     }
@@ -79,15 +74,7 @@ public class GeneroAtualizar extends JFrame {
 
 
 
-public void CriaTabela() {
-	
-	String[] columns = new String[]{"Código","Nome","Descriçao"};
-	
-	modeloDaTabela = new DefaultTableModel(null,columns);
-}
-
-
-private void AdiconarTabelaAoFrame() {
+private void AdiconarConteudoAoFrame() {
 	frame.getContentPane().setLayout(null);
 	
 	JLabel lblNomeGenero = new JLabel("Nome Genero");
@@ -122,10 +109,6 @@ private void AdiconarTabelaAoFrame() {
 	
 }
 
-public void AdicionarLinhaModelo (Object a []){
-	this.modeloDaTabela.addRow(a);
-}
-
 private JMenuItem menuCodigoDoGenero(){
 	
 	JMenuItem mntmCdigoDoCliente = new JMenuItem("C\u00F3digo do Gênero");
@@ -139,27 +122,10 @@ private JMenuItem menuCodigoDoGenero(){
 				
 				try{
 					
-					//LinkedList<Genero> generosEncontrados = new LinkedList<Genero>();
 					Genero generoEncontrado = Run.Main.bancoGenero.Consulta(Integer.parseInt(criterioDaPesquisa));
 					txNomeGenero.setText(generoEncontrado.getNome());
 					txDescricaoGenero.setText(generoEncontrado.getDescricao());
 				    txCodigo.setText(Integer.toString(generoEncontrado.getIndice()));
-					//generosEncontrados.add(Run.Main.bancoGenero.Consulta(Integer.parseInt(criterioDaPesquisa)));
-
-					//ListIterator<Locavel.Genero> iterator = generosEncontrados.listIterator();
-					
-					/* while (iterator.hasNext()){
-						
-						Locavel.Genero tempGenero = iterator.next();
-						txTeste.setText("Teste");
-						AdicionarLinhaModelo(new Object[]
-								{
-								tempGenero.getIndice(),
-								tempGenero.getNome(),
-								tempGenero.getDescricao(),
-								}
-						);
-					}*/
 				}
 				catch (Exception e1){
 					JOptionPane.showMessageDialog(null,e1.getMessage(),"Valor não esperado.",JOptionPane.ERROR_MESSAGE);
@@ -196,25 +162,7 @@ private JMenuItem menuDescricao(){
 					txDescricaoGenero.setText(generoEncontrado.getDescricao());
 					txCodigo.setText(Integer.toString(generoEncontrado.getIndice()));
 
-					
-/*					LinkedList<Locavel.Genero> generosEncontrados = new LinkedList<Locavel.Genero>();
-					generosEncontrados.add(Run.Main.bancoGenero.Consulta(criterioDaPesquisa));
-					
-					ListIterator<Locavel.Genero> iterator = generosEncontrados.listIterator();
-					
-					while (iterator.hasNext()){
-						
-						Locavel.Genero tempGenero = iterator.next();
-						AdicionarLinhaModelo(new Object[]
-								{
-								tempGenero.getIndice(),
-								tempGenero.getNome(),
-								tempGenero.getDescricao()
-								}
-						);
-					}
-					*/
-				}
+			    }
 				catch (Exception e1){
 					JOptionPane.showMessageDialog(null,e1.getMessage(),"Valor não esperado.",JOptionPane.ERROR_MESSAGE);
 				}
@@ -242,14 +190,10 @@ private JMenuItem menuSalvar(){
 	
 			
 			Locavel.Genero generoAtualizar =
-					new Locavel.Genero(txNomeGenero.getText(),txDescricaoGenero.getText());
-	
-			
-
-			generoAtualizar.setIndice(Integer.parseInt(txCodigo.getText().toString()));
+			new Locavel.Genero(txNomeGenero.getText(),txDescricaoGenero.getText());
+	            generoAtualizar.setIndice(Integer.parseInt(txCodigo.getText().toString()));
 			
 			try {
-				//generoAtualizar.setIndice(Integer.parseInt(tabelaGenerosAtualizar.getValueAt(0, 0).toString()));
 				Run.Main.bancoGenero.Altera(generoAtualizar);
 			} catch (NumberFormatException e1) {
 				JOptionPane.showMessageDialog(null, e1);
@@ -263,19 +207,6 @@ private JMenuItem menuSalvar(){
 	);
 	return mntmSalvar;
 	
-	/*
-	 * 			Locavel.Genero generoAtualizar = null;
-			try {
-				generoAtualizar = Run.Main.bancoGenero.Consulta( Integer.parseInt(tabelaGenerosAtualizar.getValueAt(0, 0).toString()) );
-			} catch (NumberFormatException e2) {
-				JOptionPane.showMessageDialog(null, e2);
-			} catch (RegistroInexistente e2) {
-				JOptionPane.showMessageDialog(null, e2);
-			}
-			
-			generoAtualizar.setNome(tabelaGenerosAtualizar.getValueAt(0, 1).toString());
-			generoAtualizar.setDescricao(tabelaGenerosAtualizar.getValueAt(0, 2).toString());
-			*/
 }
 
 private JMenuItem menuSair(){
