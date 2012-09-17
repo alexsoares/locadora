@@ -1,21 +1,24 @@
 package Visual;
 
-import java.awt.BorderLayout;
 import java.awt.EventQueue;
-
 import javax.swing.JFrame;
-import javax.swing.JPanel;
-import javax.swing.border.EmptyBorder;
 import javax.swing.JLabel;
 import javax.swing.JOptionPane;
 import javax.swing.JTextField;
 import javax.swing.JButton;
+
+import Locavel.Genero;
+
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
 
 public class GeneroConsultar extends JFrame {
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
+
 	public GeneroConsultar() {
-		setResizable(false);
 		getContentPane().setLayout(null);
 		
 		JLabel label = new JLabel("Codigo");
@@ -29,31 +32,45 @@ public class GeneroConsultar extends JFrame {
 		txConCodigo = new JTextField();
 		txConCodigo.setEditable(false);
 		txConCodigo.setColumns(10);
-		txConCodigo.setBounds(119, 54, 86, 20);
+		txConCodigo.setBounds(149, 54, 86, 20);
 		getContentPane().add(txConCodigo);
 		
 		txConNome = new JTextField();
 		txConNome.setEditable(false);
 		txConNome.setEnabled(true);
 		txConNome.setColumns(10);
-		txConNome.setBounds(119, 85, 152, 20);
+		txConNome.setBounds(149, 85, 152, 20);
 		getContentPane().add(txConNome);
 		
 		txConDescricao = new JTextField();
 		txConDescricao.setEnabled(true);
 		txConDescricao.setEditable(false);
 		txConDescricao.setColumns(10);
-		txConDescricao.setBounds(119, 120, 152, 20);
+		txConDescricao.setBounds(149, 120, 152, 20);
 		getContentPane().add(txConDescricao);
 		
 		JLabel label_2 = new JLabel("Descri\u00E7\u00E3o Genero");
-		label_2.setBounds(23, 123, 100, 14);
+		label_2.setBounds(23, 123, 116, 14);
 		getContentPane().add(label_2);
 		
 		JButton btnBuscar = new JButton("Buscar");
 		btnBuscar.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
-				String criterioDaPesquisa = CapturarCriterioPesquista("Código do Gênero").toString();
+				String criterioDaPesquisa = CapturarCriterioPesquista("Nome do Gênero").toString();
+				
+				if (criterioDaPesquisa != null){
+					
+					try{
+						Genero generoEncontrado = Run.Main.bancoGenero.Consulta(criterioDaPesquisa);
+						txConNome.setText(generoEncontrado.getNome());
+						txConDescricao.setText(generoEncontrado.getDescricao());
+						txConCodigo.setText(Integer.toString(generoEncontrado.getIndice()));
+
+				    }
+					catch (Exception e1){
+						JOptionPane.showMessageDialog(null,e1.getMessage(),"Valor não esperado.",JOptionPane.ERROR_MESSAGE);
+					}
+				}
 			}
 		});
 		btnBuscar.setBounds(23, 159, 88, 23);
