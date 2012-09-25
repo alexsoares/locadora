@@ -6,9 +6,7 @@ import javax.swing.JLabel;
 import javax.swing.JOptionPane;
 import javax.swing.JTextField;
 import javax.swing.JButton;
-
 import Locavel.Genero;
-
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
 

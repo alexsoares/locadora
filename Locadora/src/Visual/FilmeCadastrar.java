@@ -8,14 +8,17 @@ import javax.swing.JButton;
 import javax.swing.JComboBox;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
+import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import javax.swing.JTextField;
 import javax.swing.border.EmptyBorder;
 
+import Banco.RegistroJaExiste;
 import Locavel.Genero;
 
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
+import java.text.ParseException;
 import java.util.ListIterator;
 
 public class FilmeCadastrar extends JFrame {
@@ -88,6 +91,7 @@ public class FilmeCadastrar extends JFrame {
 		JButton btnCancelar = new JButton("Cancelar");
 		btnCancelar.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
+				limparDadosDaTela();
 			}
 		});
 		btnCancelar.setBounds(117, 206, 108, 23);
@@ -129,8 +133,6 @@ public class FilmeCadastrar extends JFrame {
 	}
 	public void CadastrarNovoCliente(){
 		
-
-		
 		try {
 				Locavel.Cliente novoCliente = new Locavel.Filme(
 						txNome.getText());
@@ -138,7 +140,7 @@ public class FilmeCadastrar extends JFrame {
 				Run.Main.bancoCliente.Insere(novoCliente);
 				
 				JOptionPane.showMessageDialog(null,"Cliente cadastrado com sucesso!");
-				LimparDadosDaTela();
+				limparDadosDaTela();
 				
 			} catch (NumberFormatException e) {
 				JOptionPane.showMessageDialog(null,e.getMessage(),"Valor não esperado",JOptionPane.ERROR_MESSAGE);
@@ -150,5 +152,14 @@ public class FilmeCadastrar extends JFrame {
 				JOptionPane.showMessageDialog(null,e.getMessage(),"Valor não esperado",JOptionPane.WARNING_MESSAGE);
 				e.printStackTrace();
 			}
-		}
+	}
+	
+	private void limparDadosDaTela() {
+		txDtFilme.setText(null);
+		txFxFilme.setText(null);
+		txNomeFilme.setText(null);
+		txPrecoFilme.setText(null);
+		txSinopseFilme.setText(null);
+		
+	}
 }

@@ -8,7 +8,6 @@ import javax.swing.JMenu;
 import javax.swing.JMenuBar;
 import javax.swing.JMenuItem;
 import javax.swing.JOptionPane;
-
 import Banco.RegistroInexistente;
 import Locavel.Genero;
 
@@ -33,6 +32,10 @@ public class Home {
 				if(e.getActionCommand().equals("Cadastrar")){
 					FilmeCadastrar cadastrarNovoFilme = new FilmeCadastrar();
 					cadastrarNovoFilme.setVisible(true);
+				}
+				if(e.getActionCommand().equals("Consultar e Editar")){
+					
+					FilmeConsultar consultarFilme = new FilmeConsultar(); 
 				}
 			}
 		});
@@ -165,9 +168,7 @@ public class Home {
 	private JMenu menuFilmes(){
 		JMenu menuFilmes = new JMenu("Filmes");
 		menuFilmes.add(instanciaItemDoMenuFilme("Cadastrar"));
-		menuFilmes.add(instanciaItemDoMenuFilme("Consultar"));
-		menuFilmes.add(instanciaItemDoMenuFilme("Remover"));
-		menuFilmes.add(instanciaItemDoMenuFilme("Atualizar"));
+		menuFilmes.add(instanciaItemDoMenuFilme("Consultar e Editar"));
 		return menuFilmes;
 	}
 	
