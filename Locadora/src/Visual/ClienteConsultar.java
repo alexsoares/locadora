@@ -20,16 +20,8 @@ public class ClienteConsultar{
 		AdicionaLinhasTabela();
 	}
 	
-	public DefaultTableModel getModeloTabela(){
-		return modelo;
-	}
 	
-	public void setModeloTabela(DefaultTableModel  modelo){
-		this.modelo = modelo;
-	}
-	
-	
-	public void AdicionarLinhaModelo (Object a []){
+	private void AdicionarLinhaModelo (Object a []){
 		this.modelo.addRow(a);
 	}
 	
