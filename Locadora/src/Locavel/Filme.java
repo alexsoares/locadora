@@ -2,12 +2,23 @@ package Locavel;
 
 import java.util.Date;
 
+import Banco.RegistroInexistente;
+
 public class Filme extends Produto{
 	
 	private Date dataLancamento;
 	private int faixaEtaria;
 	private String sinopse;
 	private Genero genero;
+	
+	public Filme(String nome, Double preco, Date dataLancamento, int faixaEtaria, String sinopse, String genero) throws RegistroInexistente {
+		super(nome, preco);
+		this.dataLancamento = dataLancamento;
+		this.faixaEtaria = faixaEtaria;
+		this.sinopse = sinopse;
+		this.genero = buscaGenero(genero);
+
+	}
 	
 	public Filme(String nome, Double preco, Date dataLancamento, int faixaEtaria, String sinopse, Genero genero) {
 		super(nome, preco);
@@ -48,6 +59,11 @@ public class Filme extends Produto{
 
 	public void setGenero(Genero genero) {
 		this.genero = genero;
+	}
+	public Genero buscaGenero(String criterio) throws RegistroInexistente{
+		Genero genero =  Run.Main.bancoGenero.Consulta(criterio);
+		return genero;
+		
 	}
 
 }

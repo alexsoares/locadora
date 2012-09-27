@@ -1,7 +1,5 @@
 package Visual;
 
-import java.awt.BorderLayout;
-import java.awt.EventQueue;
 import java.awt.Font;
 
 import javax.swing.JButton;
@@ -13,12 +11,16 @@ import javax.swing.JPanel;
 import javax.swing.JTextField;
 import javax.swing.border.EmptyBorder;
 
+import Banco.RegistroInexistente;
 import Banco.RegistroJaExiste;
+import Locavel.Filme;
 import Locavel.Genero;
 
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
+import java.text.DateFormat;
 import java.text.ParseException;
+import java.text.SimpleDateFormat;
 import java.util.ListIterator;
 
 public class FilmeCadastrar extends JFrame {
@@ -33,7 +35,7 @@ public class FilmeCadastrar extends JFrame {
 	private JTextField txFxFilme;
 	private JTextField txNomeFilme;
 	private JTextField txPrecoFilme;
-
+    private JComboBox<String> cbGeneroFilme = new JComboBox<String>();
 	
 	/**
 	 * Create the frame.
@@ -45,7 +47,7 @@ public class FilmeCadastrar extends JFrame {
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
 		setContentPane(contentPane);
 		
-		JComboBox<String> cbGeneroFilme = new JComboBox<String>();
+		
 		ListIterator<Genero> iterator = (ListIterator<Genero>) Run.Main.bancoGenero.RetornaLinkedList().listIterator();
 		cbGeneroFilme.addItem("Selectione");
 		while (iterator.hasNext()){
@@ -84,6 +86,12 @@ public class FilmeCadastrar extends JFrame {
 		btnCadastrar.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				
+				try {
+					CadastrarNovoFilme();
+				} catch (RegistroInexistente e1) {
+					// TODO Auto-generated catch block
+					e1.printStackTrace();
+				}
 			}
 		});
 		btnCadastrar.setBounds(331, 206, 93, 23);
@@ -131,13 +139,15 @@ public class FilmeCadastrar extends JFrame {
 		txPrecoFilme.setColumns(10);
 		
 	}
-	public void CadastrarNovoCliente(){
+	public void CadastrarNovoFilme() throws RegistroInexistente{
 		
 		try {
-				Locavel.Cliente novoCliente = new Locavel.Filme(
-						txNome.getText());
-				
-				Run.Main.bancoCliente.Insere(novoCliente);
+			DateFormat formatter = new SimpleDateFormat("dd/MM/yy");
+
+				 
+		        Filme novoFilme = new Locavel.Filme(txNomeFilme.getText(),Double.valueOf(txPrecoFilme.getText()).doubleValue(),formatter.parse("01/05/1980"),Integer.parseInt(txFxFilme.getText()),txSinopseFilme.getText(),cbGeneroFilme.getSelectedItem().toString());
+		
+				Run.Main.bancoFilme.Insere(novoFilme);
 				
 				JOptionPane.showMessageDialog(null,"Cliente cadastrado com sucesso!");
 				limparDadosDaTela();
