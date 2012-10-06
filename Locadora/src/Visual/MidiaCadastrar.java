@@ -14,7 +14,7 @@ import java.awt.Font;
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
 
-public class MidiaCadastrar {
+public class MidiaCadastrar{
 
 	private JFrame frame;
 	private JTextField txMidiaDesc;
@@ -32,10 +32,10 @@ public class MidiaCadastrar {
 	 */
 	private void initialize() {
 		frame = new JFrame();
+		frame.setTitle("Locadora Unisal - Cadastrar Nova Mídia");
+
 		frame.setBounds(100, 100, 450, 300);
-		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		frame.getContentPane().setLayout(null);
-		
+		frame.setVisible(true);
 		JLabel lblNome = new JLabel("Nome");
 		lblNome.setBounds(55, 84, 46, 14);
 		frame.getContentPane().add(lblNome);
@@ -57,6 +57,12 @@ public class MidiaCadastrar {
 		JButton btnSalvar = new JButton("Salvar");
 		btnSalvar.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
+				try {
+					CadastrarMidia();
+				} catch (RegistroInexistente e) {
+					// TODO Auto-generated catch block
+					e.printStackTrace();
+				}
 				
 			}
 		});
@@ -68,6 +74,7 @@ public class MidiaCadastrar {
 		lblCadastroDeMdias.setBounds(99, 11, 172, 14);
 		frame.getContentPane().add(lblCadastroDeMdias);
 	}
+	
 	
 	public void CadastrarMidia() throws RegistroInexistente{
 		
