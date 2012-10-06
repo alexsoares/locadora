@@ -22,6 +22,7 @@ public class Home {
 		menuBar.add(menuGenero());
 		menuBar.add(menuCliente());
 		menuBar.add(menuMidia());
+		menuBar.add(menuItem());
 		return menuBar;		
 	}
 	
@@ -155,8 +156,8 @@ public class Home {
 			@SuppressWarnings("unused")
 			public void actionPerformed(ActionEvent e){
 				if(e.getActionCommand().equals("Cadastrar")){
-					GeneroCadastrar cadastrarNovoGenero = new GeneroCadastrar();
-					frameHome.setVisible(false);
+					MidiaCadastrar cadastrarNovaMidia = new MidiaCadastrar();
+					frameHome.setVisible(true);
 				}
 				if(e.getActionCommand().equals("Atualizar")){
 					GeneroAtualizar atualizarGenero = new GeneroAtualizar();
@@ -205,7 +206,34 @@ public class Home {
 	}
 	
 	// Fim aqui
+
+	// Item Comeca Aqui
 	
+	private JMenuItem instanciaItemDoMenuItem(String nomeDoItem){
+		JMenuItem  itemDoMenu = new JMenuItem(nomeDoItem);
+		itemDoMenu.addActionListener(new ActionListener(){
+			
+			public void actionPerformed(ActionEvent e){
+				if(e.getActionCommand().equals("Cadastrar")){
+					//MidiaCadastrar cadastrarNovaMidia = new MidiaCadastrar();
+					//frameHome.setVisible(true);
+				}
+				if(e.getActionCommand().equals("Atualizar")){
+					//GeneroAtualizar atualizarGenero = new GeneroAtualizar();
+				}
+				if(e.getActionCommand().equals("Consultar")){
+					//GeneroConsultar consultarGenero = new GeneroConsultar();
+					//consultarGenero.setVisible(true);
+				}
+				
+				if(e.getActionCommand().equals("Remover")){
+				}
+			}
+		});
+		return itemDoMenu;
+	}
+	
+	// Fim aqui
 	
 	private JMenu menuCliente(){
 		JMenu menuCliente = new JMenu("Cliente");
@@ -236,6 +264,7 @@ public class Home {
 		
 	}
 	
+	
 	private JMenu menuFilmes(){
 		JMenu menuFilmes = new JMenu("Filmes");
 		menuFilmes.add(instanciaItemDoMenuFilme("Cadastrar"));
@@ -243,6 +272,15 @@ public class Home {
 		return menuFilmes;
 	}
 	
+	private JMenu menuItem(){
+		JMenu menuItem = new JMenu("Item");
+		menuItem.add(instanciaItemDoMenuItem("Cadastrar"));
+		menuItem.add(instanciaItemDoMenuItem("Consultar"));
+		menuItem.add(instanciaItemDoMenuItem("Remover"));
+		menuItem.add(instanciaItemDoMenuItem("Atualizar"));
+		return menuItem;
+		
+	}
 	
 	
 	public Home() {
@@ -266,6 +304,7 @@ public class Home {
 		frameHome.setTitle("Locadora Unisal - Bem vindo");
 		frameHome.setBounds(100, 100, 450, 300);
 		frameHome.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		
 		frameHome.setResizable(false);
 	}
 }
