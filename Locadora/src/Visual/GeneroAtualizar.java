@@ -28,7 +28,7 @@ import javax.swing.JDesktopPane;
 import javax.swing.BoxLayout;
 
 @SuppressWarnings("unused")
-public class GeneroAtualizar extends JFrame {
+public class GeneroAtualizar extends Home {
 
 
 	/**
@@ -41,21 +41,6 @@ public class GeneroAtualizar extends JFrame {
 	private JTextField txDescricaoGenero;
 	private JTextField txCodigo;
 
-	/**
-	 * Launch the application.
-	 */
-	public static void main(String[] args) {
-		EventQueue.invokeLater(new Runnable() {
-			public void run() {
-				try {
-					GeneroAtualizar frame = new GeneroAtualizar();
-					frame.setVisible(true);
-				} catch (Exception e) {
-					e.printStackTrace();
-				}
-			}
-		});
-	}
 
 	/**
 	 * Create the frame.
