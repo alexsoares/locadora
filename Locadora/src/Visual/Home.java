@@ -21,6 +21,7 @@ public class Home {
 		menuBar.add(menuFilmes());
 		menuBar.add(menuGenero());
 		menuBar.add(menuCliente());
+		menuBar.add(menuMidia());
 		return menuBar;		
 	}
 	
@@ -105,7 +106,7 @@ public class Home {
 				}
 				if(e.getActionCommand().equals("Consultar")){
 					GeneroConsultar consultarGenero = new GeneroConsultar();
-					consultarGenero.setVisible(true);
+					//consultarGenero.setVisible(true);
 				}
 				
 				if(e.getActionCommand().equals("Remover")){
@@ -146,6 +147,66 @@ public class Home {
 		return itemDoMenu;
 	}
 	
+	// Comeca Aqui
+	
+	private JMenuItem instanciaItemDoMenuMidia(String nomeDoItem){
+		JMenuItem  itemDoMenu = new JMenuItem(nomeDoItem);
+		itemDoMenu.addActionListener(new ActionListener(){
+			@SuppressWarnings("unused")
+			public void actionPerformed(ActionEvent e){
+				if(e.getActionCommand().equals("Cadastrar")){
+					GeneroCadastrar cadastrarNovoGenero = new GeneroCadastrar();
+					frameHome.setVisible(false);
+				}
+				if(e.getActionCommand().equals("Atualizar")){
+					GeneroAtualizar atualizarGenero = new GeneroAtualizar();
+				}
+				if(e.getActionCommand().equals("Consultar")){
+					GeneroConsultar consultarGenero = new GeneroConsultar();
+					//consultarGenero.setVisible(true);
+				}
+				
+				if(e.getActionCommand().equals("Remover")){
+					int codigoGeneroRemovido = 0;
+					
+					//String validaDado =JOptionPane.showInputDialog("Favor informar o codigo do genero que deseja remover:");
+					String validaDado = CapturarCriterioPesquista("Descrição").toString();
+					if(validaDado ==null){
+						JOptionPane.showMessageDialog(null,"Operacao Cancelada.");
+					}
+					else
+					{
+						try {
+							Genero generoEncontrado = Run.Main.bancoGenero.Consulta((validaDado));
+							codigoGeneroRemovido = generoEncontrado.getIndice();
+							
+						} catch (RegistroInexistente e2) {
+							// TODO Auto-generated catch block
+							e2.printStackTrace();
+						}
+						
+						try {
+							if (JOptionPane.showConfirmDialog(null, "Deseja realmente remover o genero numero: "+codigoGeneroRemovido+"?") == 0){
+								Run.Main.bancoGenero.Exclui(codigoGeneroRemovido);
+							}
+							else
+							{
+								JOptionPane.showMessageDialog(null,"Operacao Cancelada.");
+							}
+						} catch (RegistroInexistente e1) {
+							JOptionPane.showMessageDialog(null,e1.getMessage(),"Valor nao esperado",JOptionPane.ERROR_MESSAGE);
+							e1.printStackTrace();
+						}
+					}
+				}
+			}
+		});
+		return itemDoMenu;
+	}
+	
+	// Fim aqui
+	
+	
 	private JMenu menuCliente(){
 		JMenu menuCliente = new JMenu("Cliente");
 		menuCliente.add(instanciaItemDoMenuCliente("Cadastrar"));
@@ -162,6 +223,16 @@ public class Home {
 		menuGenero.add(instanciaItemDoMenuGenero("Remover"));
 		menuGenero.add(instanciaItemDoMenuGenero("Atualizar"));
 		return menuGenero;
+		
+	}
+	
+	private JMenu menuMidia(){
+		JMenu menuMidia = new JMenu("Midia");
+		menuMidia.add(instanciaItemDoMenuMidia("Cadastrar"));
+		menuMidia.add(instanciaItemDoMenuMidia("Consultar"));
+		menuMidia.add(instanciaItemDoMenuMidia("Remover"));
+		menuMidia.add(instanciaItemDoMenuMidia("Atualizar"));
+		return menuMidia;
 		
 	}
 	
@@ -197,5 +268,4 @@ public class Home {
 		frameHome.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		frameHome.setResizable(false);
 	}
-
 }
