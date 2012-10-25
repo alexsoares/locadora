@@ -2,6 +2,7 @@ package Locavel;
 
 import java.util.Date;
 
+import Banco.RegistroInexistente;
 import Banco.Tabelavel;
 
 public class Item implements Tabelavel {
@@ -20,6 +21,16 @@ public class Item implements Tabelavel {
 		this.codigo_barra = codigo_barra;
 		this.filme = filme;
 		this.midia = midia;
+		this.data_aquisicao = data_aquisicao;
+		this.ativo = true;
+		this.locavel = true;
+	}
+	
+	public Item( String codigo_barra, String filme, String midia, Date data_aquisicao ) throws RegistroInexistente {
+		this.indice = -1;
+		this.codigo_barra = codigo_barra;
+		this.filme = buscaFilme(filme);
+		this.midia = buscaMidia(midia);
 		this.data_aquisicao = data_aquisicao;
 		this.ativo = true;
 		this.locavel = true;
@@ -78,5 +89,12 @@ public class Item implements Tabelavel {
 	public void devolver() {
 		locavel = true;
 	}
-	
+	public Filme buscaFilme(String criterio) throws RegistroInexistente{
+		Filme filme =  Run.Main.bancoFilme.Consulta(criterio);
+		return filme;
+	}
+	public Midia buscaMidia(String criterio) throws RegistroInexistente{
+		Midia midia =  Run.Main.bancoMidia.Consulta(criterio);
+		return midia;
+	}
 }

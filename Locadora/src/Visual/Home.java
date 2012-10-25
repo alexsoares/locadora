@@ -215,8 +215,8 @@ public class Home {
 			
 			public void actionPerformed(ActionEvent e){
 				if(e.getActionCommand().equals("Cadastrar")){
-					//MidiaCadastrar cadastrarNovaMidia = new MidiaCadastrar();
-					//frameHome.setVisible(true);
+					ItemCadastrar cadastrarNovoItem = new ItemCadastrar();
+					frameHome.setVisible(false);
 				}
 				if(e.getActionCommand().equals("Atualizar")){
 					//GeneroAtualizar atualizarGenero = new GeneroAtualizar();

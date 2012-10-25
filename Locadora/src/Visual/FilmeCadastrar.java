@@ -37,6 +37,9 @@ public class FilmeCadastrar extends JFrame {
 	private JTextField txPrecoFilme;
     private JComboBox<String> cbGeneroFilme = new JComboBox<String>();
 	
+    
+
+
 	/**
 	 * Create the frame.
 	 */
