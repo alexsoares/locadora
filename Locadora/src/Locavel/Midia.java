@@ -43,5 +43,9 @@ public class Midia implements Tabelavel {
 	public String retornaValorChave() {
 		return this.codigo;
 	}
+	
+	public String toString(){
+		return "Codigo: " + this.codigo + " | Descricao: " +  this.descricao;
+	}
 
 }

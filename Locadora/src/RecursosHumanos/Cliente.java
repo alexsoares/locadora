@@ -34,6 +34,16 @@ public class Cliente implements Tabelavel {
 		
 	}
 	
+	public Cliente(String nome, String cpf, Date dataNascimento) {
+		
+		this.codigoCliente = -1;
+		this.nome = nome;
+		this.cpf = cpf;
+		this.dataNascimento = dataNascimento;
+		this.setLocacaoEmAndamento(false);
+		
+	}
+	
 	public String getNome() {
 		return nome;
 	}
@@ -138,6 +148,10 @@ public class Cliente implements Tabelavel {
 
 	public void setLocacaoEmAndamento(boolean locacaoEmAndamento) {
 		this.locacaoEmAndamento = locacaoEmAndamento;
+	}
+	
+	public String toString(){
+		return "Nome: " + this.nome + " || CPF: " + this.cpf + " || Data Nascimento: "+ this.dataNascimento.toString();
 	}
 	
 }

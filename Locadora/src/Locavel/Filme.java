@@ -60,10 +60,14 @@ public class Filme extends Produto{
 	public void setGenero(Genero genero) {
 		this.genero = genero;
 	}
+	
 	public Genero buscaGenero(String criterio) throws RegistroInexistente{
 		Genero genero =  Run.Main.bancoGenero.Consulta(criterio);
 		return genero;
 		
 	}
 
+	public String toString(){
+		return "Nome: " + this.getNome() + " | Sinopse : " + this.getSinopse();
+	}
 }
