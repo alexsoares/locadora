@@ -59,4 +59,7 @@ public class Genero implements  Tabelavel {
 		return this.indice;
 	}	
 	
+	public String toString(){
+		return "Nome: " + this.nome + " | Descrição: " + this.descricao;
+	}
 }

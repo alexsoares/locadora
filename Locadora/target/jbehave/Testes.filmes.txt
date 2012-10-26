@@ -1,0 +1,24 @@
+Title: Validar o CRUD de Filmes
+(Testes/filmes.story)
+Scenario: Cadastrar um gênero
+Given Genero Drama com a descricao: Descricao do Genero Drama
+When o inseremos no Sistema
+Then o Sistema exibe as informações do Gênero adicionado.
+
+Scenario: Cadastrar um novo filme
+Given um novo filme com nome: O Filme da minha vida, custando 1.0, lançando em 01/10/1997 com a faixa etária de 13 anos, com a sinopse: (Sinopse do filme da minha vida) 
+pertencente ao gênero Drama
+When o cadastramos no Sistema
+Then o Sistema exibe as informações do Filme
+
+Scenario: Atualizar um filme
+Given o Filme: O Filme da minha vida
+When atualizamos a sinopse para: Nova Sinopse
+Then podemos visualizar a nova sinopse nas informações do filme
+
+Scenario: Remover um filme
+Given o Filme: O Filme da minha vida
+When o removemos
+Then o mesmo não aparecerá na lista de filmes cadastrados
+
+

@@ -1,0 +1,8 @@
+Title: Validar o CRUD de Gênero
+(Testes/genero.story)
+Scenario: Cadastrar um gênero
+Given o gênero Romance, ainda não cadastrado (PENDING)
+When o cadastro no Sistema (PENDING)
+Then o Sistema exibe as informações do gênero (PENDING)
+
+
