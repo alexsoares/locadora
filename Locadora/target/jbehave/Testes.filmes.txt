@@ -21,4 +21,10 @@ Given o Filme: O Filme da minha vida
 When o removemos
 Then o mesmo não aparecerá na lista de filmes cadastrados
 
+Scenario: Cadastrar um novo filme
+Given um novo filme com nome: O Senhor da Vida, custando 3.5, lançando em 01/10/1999 com a faixa etária de 10 anos, com a sinopse: (Sinopse do filme O Senhor da Vida) 
+pertencente ao gênero Drama
+When o cadastramos no Sistema
+Then o Sistema exibe as informações do Filme
+
 

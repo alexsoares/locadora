@@ -79,4 +79,12 @@ public class Item implements Tabelavel {
 		locavel = true;
 	}
 	
+	public String toString(){
+		return "Codigo: " + this.codigo_barra + " | Filme: " + this.filme + " | Data Aquisicao: " + this.data_aquisicao.toString();
+	}
+
+	public void setFilme(Filme filme2) {
+		this.filme = filme;
+	}
+	
 }

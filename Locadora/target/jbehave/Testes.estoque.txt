@@ -1,0 +1,29 @@
+Title: Gestão do estoque.
+(Testes/estoque.story)
+Scenario: Cadastrar uma nova mídia
+Given uma nova mídia, VHS com a descricao: Fitas VHS
+When a cadastramos no Sistema
+Then o Sistema exibe as informações da mídia
+
+Scenario: Cadastrar um gênero
+Given Genero Animação com a descricao: Descricao do Genero Animação
+When o inseremos no Sistema
+Then o Sistema exibe as informações do Gênero adicionado.
+
+Scenario: Cadastrar um novo filme
+Given um novo filme com nome: A Era do Gelo, custando 4.2, lançando em 15/12/2011 com a faixa etária de 6 anos, com a sinopse: (Sinopse do filme A Era do Gelo) 
+pertencente ao gênero Animação
+When o cadastramos no Sistema
+Then o Sistema exibe as informações do Filme
+
+Scenario: Cadastrar um novo Item
+Given um item que possui o código de barras 11153035E10, associado ao filme A Era do Gelo, na mídia VHS, realizado na data 02/10/2011
+When o cadastramos no sistema
+Then o Sistema retorna os dados do item 11153035E10
+
+Scenario: Inserir um item em estoque
+Given um item existente (PENDING)
+When o inserimos em estoque (PENDING)
+Then o Sistema exibe a quantidade disponível em estoque para o item em questão. (PENDING)
+
+

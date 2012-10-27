@@ -1,0 +1,57 @@
+Title: Testes do CRUD de Item
+Narrative:
+As um funcionario da locadora
+I want gerenciar os itens cadastrados
+So manter o Sistema coerente.
+     
+
+
+Scenario: Cadastrar uma nova mídia
+
+Given uma nova mídia, BluRay com a descricao: Disco que suporta alta quantidade de Dados
+When a cadastramos no Sistema
+Then o Sistema exibe as informações da mídia
+
+
+Scenario: Cadastrar um gênero
+
+Given Genero Ação com a descricao: Descricao do Genero Ação
+When o inseremos no Sistema
+Then o Sistema exibe as informações do Gênero adicionado.
+
+
+Scenario: Cadastrar um novo filme
+
+Given um novo filme com nome: 60 Segundos, custando 5.0, lançando em 01/10/2002 com a faixa etária de 16 anos, com a sinopse: (Sinopse do filme 60 Segundos) 
+pertencente ao gênero Ação
+When o cadastramos no Sistema
+Then o Sistema exibe as informações do Filme
+
+Given um novo filme com nome: O Senhor das Armas, custando 5.0, lançando em 01/10/2010 com a faixa etária de 14 anos, com a sinopse: (Sinopse do filme O Senhor das Armas) 
+pertencente ao gênero Ação
+When o cadastramos no Sistema
+Then o Sistema exibe as informações do Filme
+
+
+Scenario: Cadastrar um novo Item
+
+Given um item que possui o código de barras 11153035E10, associado ao filme 60 Segundos, na mídia BluRay, realizado na data 02/10/2011
+When o cadastramos no sistema
+Then o Sistema retorna os dados do item 11153035E10
+
+
+Scenario: Atualizar o Filme de um Item cadastrado
+
+Given um item cadastrado com o código de barras igual a 11153035E10
+When alteramos o filme do item para O Senhor das Armas
+Then o Sistema retorna os dados do item 11153035E10
+
+
+Scenario: Remover um Item cadastrado
+
+Given um item cadastrado com o código de barras igual a 11153035E10
+When o removemos do Sistema
+Then o Sistema retorna todos os itens cadastrados
+ 
+
+
