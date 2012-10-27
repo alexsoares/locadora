@@ -3,14 +3,14 @@
 	<classpathentry kind="src" path="src"/>
 	<classpathentry kind="src" path="resources"/>
 	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER/org.eclipse.jdt.internal.debug.ui.launcher.StandardVMType/JavaSE-1.7"/>
-	<classpathentry kind="lib" path="C:/Users/b_schion/Desktop/Pos Graduação/lib/commons-collections-3.2.1.jar"/>
-	<classpathentry kind="lib" path="C:/Users/b_schion/Desktop/Pos Graduação/lib/commons-io-1.4.jar"/>
-	<classpathentry kind="lib" path="C:/Users/b_schion/Desktop/Pos Graduação/lib/commons-lang-2.5.jar"/>
-	<classpathentry kind="lib" path="C:/Users/b_schion/Desktop/Pos Graduação/lib/freemarker-2.3.16.jar"/>
-	<classpathentry kind="lib" path="C:/Users/b_schion/Desktop/Pos Graduação/lib/hamcrest-all-1.1.jar"/>
-	<classpathentry kind="lib" path="C:/Users/b_schion/Desktop/Pos Graduação/lib/jbehave-core-3.1.2.jar"/>
-	<classpathentry kind="lib" path="C:/Users/b_schion/Desktop/Pos Graduação/lib/junit-4.4.jar"/>
-	<classpathentry kind="lib" path="C:/Users/b_schion/Desktop/Pos Graduação/lib/junit-dep-4.8.2.jar"/>
-	<classpathentry kind="lib" path="C:/Users/b_schion/Desktop/Pos Graduação/lib/plexus-utils-2.0.5.jar"/>
+	<classpathentry kind="lib" path="C:/Users/Alexandre/Documents/GitHub/locadora/Locadora/lib/commons-collections-3.2.1.jar"/>
+	<classpathentry kind="lib" path="C:/Users/Alexandre/Documents/GitHub/locadora/Locadora/lib/commons-io-1.4.jar"/>
+	<classpathentry kind="lib" path="C:/Users/Alexandre/Documents/GitHub/locadora/Locadora/lib/commons-lang-2.5.jar"/>
+	<classpathentry kind="lib" path="C:/Users/Alexandre/Documents/GitHub/locadora/Locadora/lib/freemarker-2.3.16.jar"/>
+	<classpathentry kind="lib" path="C:/Users/Alexandre/Documents/GitHub/locadora/Locadora/lib/hamcrest-all-1.1.jar"/>
+	<classpathentry kind="lib" path="C:/Users/Alexandre/Documents/GitHub/locadora/Locadora/lib/jbehave-core-3.1.2.jar"/>
+	<classpathentry kind="lib" path="C:/Users/Alexandre/Documents/GitHub/locadora/Locadora/lib/junit-4.4.jar"/>
+	<classpathentry kind="lib" path="C:/Users/Alexandre/Documents/GitHub/locadora/Locadora/lib/junit-dep-4.8.2.jar"/>
+	<classpathentry kind="lib" path="C:/Users/Alexandre/Documents/GitHub/locadora/Locadora/lib/plexus-utils-2.0.5.jar"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>
