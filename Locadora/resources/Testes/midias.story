@@ -10,3 +10,4 @@ Scenario: Cadastrar uma nova mídia
 Given uma nova mídia, DVD com a descricao: Disco que suporta 4.7 GB de Dados
 When a cadastramos no Sistema
 Then o Sistema exibe as informações da mídia
+

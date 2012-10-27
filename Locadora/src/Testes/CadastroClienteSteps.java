@@ -21,7 +21,7 @@ public class CadastroClienteSteps {
 		this.novoCliente = new Cliente(nome,cpf,formatDate.parse(dataNascimento));
 	}
 	
-	@When("o cadastramos no Sistema")
+	@When("cadastramos o cliente no Sistema")
 	public void cadastro() throws RegistroJaExiste{
 		Run.Main.bancoCliente.Insere(novoCliente);
 	}

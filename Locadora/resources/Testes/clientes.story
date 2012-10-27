@@ -5,10 +5,10 @@ I want cadastrar um novo cliente
 So que o mesmo possa efetuar locações
      
 
-Scenario: Inserir um novo cliente na base
+Scenario: Cadastrar um cliente 
 
 Given um novo cliente com nome: Bruno, cpf: 12345678912, nascido no dia 22/09/1987
-When o cadastramos no Sistema
+When cadastramos o cliente no Sistema
 Then o Sistema exibe as informações do cliente
 
 
@@ -32,4 +32,8 @@ Given um cliente já cadastrado
 When o removemos
 Then o Sistema exibe um diálogo informando que o cliente não está mais cadastrado
 
+Scenario: Inserir um novo cliente na base
 
+Given um novo cliente com nome: Andre, cpf: 02345678912, nascido no dia 30/10/1983
+When cadastramos o cliente no Sistema
+Then o Sistema exibe as informações do cliente

@@ -71,4 +71,9 @@ public class Locacao implements Tabelavel {
 		return dataLocacao;
 	}
 	
+	public String toString(){
+		return 	"Codigo: " + this.codigo + " | Cliente : " + this.cliente + " | Data Locacao: " 
+				+ this.dataLocacao + " | Data Devolução: " + this.dataDevolucao;
+	}
+	
 }
